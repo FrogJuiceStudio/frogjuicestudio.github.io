@@ -533,7 +533,7 @@ strong {
   background-color: var(--dark-color);
   position: relative;
   overflow: hidden;
-  min-height: 420px;
+  min-height: 100vh;
   text-align: center;
 }
 
@@ -574,7 +574,7 @@ strong {
 }
 
 .trailer {
-  object-fit:cover;
+  object-fit:none;
   width: 100%;
   height: 100%;
   position: absolute !important;
