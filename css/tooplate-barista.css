@@ -345,6 +345,8 @@ strong {
 .navbar .container {
   background: rgba(255, 255, 255, 0.06);
   border-radius: var(--border-radius-medium);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   padding: 2px 30px;
 }
 
