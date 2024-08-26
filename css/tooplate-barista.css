@@ -35,8 +35,8 @@ https://www.tooplate.com/view/2137-barista-cafe
   --menu-font-size:               16px;
 
   --border-radius-large:          100px;
-  --border-radius-medium:         20px;
-  --border-radius-small:          10px;
+  --border-radius-medium:         10px;
+  --border-radius-small:          5px;
 
   --font-weight-thin:             200;
   --font-weight-light:            300;
@@ -338,14 +338,14 @@ strong {
 .navbar {
   background: transparent;
   z-index: 999999;
-  padding-top: 30px;
+  padding-top: 0px;
   padding-bottom: 30px;
 }
 
 .navbar .container {
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: var(--border-radius-medium);
-  padding: 15px 30px;
+  padding: 2px 30px;
 }
 
 .navbar-brand,
@@ -1078,8 +1078,8 @@ strong {
   }
 
   .hero-section {
-    padding-top: 148px;
-    padding-bottom: 100px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .navbar-brand,
