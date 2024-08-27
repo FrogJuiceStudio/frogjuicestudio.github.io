@@ -11,8 +11,8 @@ https://www.tooplate.com/view/2137-barista-cafe
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #BC6C25;
-  --secondary-color:              #DDA15E;
+  --primary-color:                #ff427ebe;
+  --secondary-color:              #00c684d3;
   --section-bg-color:             #030303;
   --custom-btn-bg-color:          #BC6C25;
   --custom-btn-bg-hover-color:    #DDA15E;
@@ -20,6 +20,9 @@ https://www.tooplate.com/view/2137-barista-cafe
   --p-color:                      #717275;
   --border-color:                 #7fffd4;
   --link-hover-color:             #E76F51;
+
+  --game-gradient-color:          #00c6847f;
+
 
   --body-font-family:             'Plus Jakarta Sans', sans-serif;
 
@@ -702,7 +705,7 @@ strong {
 }
 
 .team-block-info {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--game-gradient-color));
   position: absolute;
   z-index: 2;
   top: 0;
