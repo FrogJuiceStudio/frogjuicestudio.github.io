@@ -13,7 +13,7 @@ https://www.tooplate.com/view/2137-barista-cafe
   --white-color:                  #ffffff;
   --primary-color:                #BC6C25;
   --secondary-color:              #DDA15E;
-  --section-bg-color:             #b78752;
+  --section-bg-color:             #1e4e3e;
   --custom-btn-bg-color:          #BC6C25;
   --custom-btn-bg-hover-color:    #DDA15E;
   --dark-color:                   #000000;
@@ -43,6 +43,41 @@ https://www.tooplate.com/view/2137-barista-cafe
   --font-weight-normal:           400;
   --font-weight-bold:             700;
 }
+
+/* :root {
+  --white-color:                  #ffffff;
+  --primary-color:                #BC6C25;
+  --secondary-color:              #DDA15E;
+  --section-bg-color:             #b78752;
+  --custom-btn-bg-color:          #BC6C25;
+  --custom-btn-bg-hover-color:    #DDA15E;
+  --dark-color:                   #000000;
+  --p-color:                      #717275;
+  --border-color:                 #7fffd4;
+  --link-hover-color:             #E76F51;
+
+  --body-font-family:             'Plus Jakarta Sans', sans-serif;
+
+  --h1-font-size:                 68px;
+  --h2-font-size:                 46px;
+  --h3-font-size:                 32px;
+  --h4-font-size:                 28px;
+  --h5-font-size:                 24px;
+  --h6-font-size:                 22px;
+  --p-font-size:                  20px;
+  --btn-font-size:                16px;
+  --form-btn-font-size:           18px;
+  --menu-font-size:               16px;
+
+  --border-radius-large:          100px;
+  --border-radius-medium:         10px;
+  --border-radius-small:          5px;
+
+  --font-weight-thin:             200;
+  --font-weight-light:            300;
+  --font-weight-normal:           400;
+  --font-weight-bold:             700;
+} */
 
 body {
   background-color: var(--white-color);
