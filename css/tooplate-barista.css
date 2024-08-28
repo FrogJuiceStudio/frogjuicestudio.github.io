@@ -640,14 +640,11 @@ strong {
 }
 
 .linear-wipe {
-  mask: linear-gradient(-90deg, #ffffff 30%, rgba(255, 255, 255, 0.333), #ffffff 70%) right/360%;
-  animation: shimmer 3s infinite;
+  mask: linear-gradient(-84deg, #1eff00 44%, rgba(140, 255, 0, 0.225), #ffee00 56%) right/360%;
+  animation: shimmer 5s infinite;
 }
 
 @keyframes shimmer {
-  0% {
-    mask-position: right
-  }
   100% {
     mask-position: left
   }
