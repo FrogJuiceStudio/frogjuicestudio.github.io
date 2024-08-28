@@ -629,11 +629,32 @@ strong {
   position: absolute !important;
 }
 
-.trailer-img {
+.wishlist {
   backdrop-filter: blur(4px) saturate(3);
+  /* border-style: solid 20px;
+  border-color: #001eff; */
+  border-radius: var(--border-radius-medium);
   object-fit:contain;
   width: 76vw;
   max-width: 500px;
+}
+
+.linear-wipe {
+  mask: linear-gradient(-90deg, #ffffff 30%, rgba(255, 255, 255, 0.333), #ffffff 70%) right/360%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    mask-position: right
+  }
+  100% {
+    mask-position: left
+  }
+}
+
+.wishlist:hover{
+  transform: scale(1.1);
 }
 
 .opening-hours-list {
