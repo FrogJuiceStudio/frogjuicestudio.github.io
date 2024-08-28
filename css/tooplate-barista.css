@@ -633,13 +633,8 @@ strong {
   backdrop-filter: blur(4px) saturate(3);
   object-fit:contain;
   width: 76vw;
-  max-width: 400px;
-  /* height: 60vw;
-  max-height: 400px; */
-  /* align-content: center; */
-  /* position:sticky !important; */
+  max-width: 500px;
 }
-
 
 .opening-hours-list {
   margin: 0;
