@@ -623,9 +623,14 @@ strong {
     linear-gradient(to bottom, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
     linear-gradient(to left, rgba(255, 255, 255, 0) 90%, var(--section-bg-color)),
     linear-gradient(to right, rgba(255, 255, 255, 0) 90%, var(--section-bg-color));
+  object-fit:none;
+  width: 101%;
+  height: 101%;
+  position: absolute !important;
 }
 
 .trailer-img {
+  backdrop-filter: blur(4px) saturate(3);
   object-fit:contain;
   width: 76vw;
   max-width: 400px;
@@ -634,6 +639,7 @@ strong {
   /* align-content: center; */
   /* position:sticky !important; */
 }
+
 
 .opening-hours-list {
   margin: 0;
