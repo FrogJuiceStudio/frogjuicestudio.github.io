@@ -640,7 +640,7 @@ strong {
 }
 
 .linear-wipe {
-  mask: linear-gradient(-44deg, #1eff00 44%, rgba(140, 255, 0, 0.225), #ffee00 55%) right/360%;
+  mask: linear-gradient(-86deg, #1eff00 44%, rgba(140, 255, 0, 0.225), #ffee00 55%) right/360%;
   animation: shimmer 4s infinite;
 }
 
