@@ -1049,7 +1049,8 @@ strong {
   background-color: var(--primary-color);
   /* padding-top: 100px; */
   /* padding-bottom: 100px; */
-  padding-bottom: 20px;
+  /* padding-bottom: 100vh; */
+  padding-bottom: 30px;
 }
 
 .site-footer strong {
@@ -1194,10 +1195,10 @@ strong {
     padding: 35px;
   }
 
-  .site-footer {
+  /* .site-footer {
     padding-top: 50px;
     padding-bottom: 50px;
-  }
+  } */
 }
 
 @media screen and (max-width: 767px) {
