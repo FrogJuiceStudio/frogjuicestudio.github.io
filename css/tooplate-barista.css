@@ -23,6 +23,7 @@ https://www.tooplate.com/view/2137-barista-cafe
   --link-hover-color:             #E76F51;
 
   --game-gradient-color:          #ff427ebe;
+  --footer-bg-color:              #000000f4;
 
 
   --body-font-family:             'Plus Jakarta Sans', sans-serif;
@@ -1046,11 +1047,9 @@ strong {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
-  background-color: var(--primary-color);
-  /* padding-top: 100px; */
-  /* padding-bottom: 100px; */
-  /* padding-bottom: 100vh; */
-  padding-bottom: 30px;
+  background-color: var(--footer-bg-color);
+  padding-top: 1vh;
+  padding-bottom: 1.4vh;
 }
 
 .site-footer strong {
