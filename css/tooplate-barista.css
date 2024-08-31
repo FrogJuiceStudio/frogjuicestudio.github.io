@@ -390,6 +390,8 @@ strong {
   padding: 2px 30px;
 }
 
+
+
 .navbar-brand,
 .navbar-brand:hover {
   font-size: var(--h4-font-size);
@@ -1284,6 +1286,16 @@ strong {
   .timeline-container-left::before,
   .timeline-container-right::before {
     top: 13px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar .container {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: var(--border-radius-medium);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 0px 12px;
   }
 }
 
