@@ -1198,6 +1198,11 @@ strong {
     padding-top: 50px;
     padding-bottom: 50px;
   } */
+
+  .cat{
+    display:none;
+    height: 225px;
+  }
 }
 
 @media screen and (max-width: 767px) {
