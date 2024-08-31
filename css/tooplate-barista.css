@@ -1052,7 +1052,7 @@ strong {
   background-color: var(--footer-bg-color);
   padding-top: 1vh;
   padding-bottom: 1.4vh;
-  border-top: solid 1px var(--white-color);
+  border-top: solid 1px rgba(255, 255, 255, 0.75);
 }
 
 .site-footer strong {
