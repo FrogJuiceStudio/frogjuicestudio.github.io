@@ -12,10 +12,7 @@ function showCat() {
 
 
 function playCat() {
-  var cat = document.getElementById("catVideo");
-  // cat.remove();
-  cat.load();
-// Add .vid to body
-// document.body.appendChild(cat);
+  var cat = document.getElementById("catVideo");  
   cat.play();
+  cat.volume=1;
 }                        
