@@ -721,7 +721,7 @@ strong {
 }
 
 .team-block-wrap {
-  background-color: var(--secondary-color);
+  background-color: var(--section-bg-color);
   border-radius: var(--border-radius-medium);
   position: relative;
   overflow: hidden;
