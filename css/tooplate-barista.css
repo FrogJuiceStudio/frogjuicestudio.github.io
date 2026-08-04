@@ -720,6 +720,34 @@ strong {
   color: var(--secondary-color);
 }
 
+.new-game-wrap {
+  /* background-color: var(--section-bg-color); */
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  /* overflow: hidden; */
+  /* max-height: 450px; */
+  cursor: pointer;
+}
+
+.new-game-wrap:hover .team-block-image {
+  transform: scale(1.2);
+}
+
+.new-game-info {
+  /* background-image:
+    linear-gradient(to top, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
+    linear-gradient(to left, rgba(255, 255, 255, 0) 60%, var(--section-bg-color)),
+    linear-gradient(to right, rgba(255, 255, 255, 0) 60%, var(--section-bg-color)); */
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+}
+
 .team-block-wrap {
   background-color: var(--section-bg-color);
   border-radius: var(--border-radius-medium);
