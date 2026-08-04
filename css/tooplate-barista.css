@@ -401,7 +401,7 @@ strong {
 }
 
 .navbar .navbar-brand-image {
-  filter: brightness(0) invert(1);
+  /* filter: brightness(0) invert(1); */
 }
 
 .navbar-brand-image {
