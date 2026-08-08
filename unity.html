@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Play SPLICE - Frogjuice Studio</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+        }
+
+        #unity-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        #unity-canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="unity-container">
+        <canvas id="unity-canvas" tabindex="-1"></canvas>
+    </div>
+
+    <script src="unity/Build/MyGame.loader.js"></script>
+
+    <script>
+        createUnityInstance(
+            document.querySelector("#unity-canvas"),
+            {
+                dataUrl: "unity/Build/MyGame.data",
+                frameworkUrl: "unity/Build/MyGame.framework.js",
+                codeUrl: "unity/Build/MyGame.wasm",
+                streamingAssetsUrl: "StreamingAssets",
+
+                companyName: "Frogjuice Studio",
+                productName: "SPLICE",
+                productVersion: "1.0"
+            }
+        ).then((unityInstance) => {
+            console.log("Unity loaded!");
+        }).catch((message) => {
+            console.error(message);
+        });
+    </script>
+
+</body>
+</html>

@@ -223,7 +223,7 @@
 
 
             
-            <!-- PLAYER -->
+            <!-- AUDIOPLAYER.html -->
             <iframe
             src="audioplayer.html"
             style="
@@ -236,9 +236,33 @@
                 z-index: 9999;
             ">
             </iframe>
-            <!-- PLAYER END-->
+            <!-- AUDIOPLAYER.html END-->
+
+
+            <!-- WELCOME.html -->
+            <iframe 
+                id="welcome_iframe"
+                src="welcome.html" 
+                style="position: fixed; inset: 0; width: 100%; height: 100%; border: none; z-index: 9999;" 
+                allowtransparency="false">
+            </iframe>
+            <!-- WELCOME.html END -->
+
 
         </main>
+
+        <!-- CLOSE WELCOME -->
+        <script>
+            window.addEventListener("message", function(event) {
+                if (event.data && event.data.action === "closeWelcome") {
+                    const iframe = document.getElementById("welcome_iframe");
+                    if (iframe) {
+                        iframe.remove();
+                    }
+                }
+            });
+        </script>
+        <!-- CLOSE WELCOME END-->
 
         <!-- JAVASCRIPT -->
         <script src="js/jquery.min.js"></script>
@@ -249,6 +273,8 @@
         <script src="js/custom.js"></script>
         <script src="js/my.js"></script>
         <!-- JAVASCRIPT END -->
+
+
 
     </body>
 </html>
