@@ -251,6 +251,28 @@
 
         </main>
 
+            <script src="unity/Build/MyGame.loader.js"></script>
+
+    <script>
+        createUnityInstance(
+            document.querySelector("#unity-canvas"),
+            {
+                dataUrl: "unity/Build/MyGame.data.br",
+                frameworkUrl: "unity/Build/MyGame.framework.js.br",
+                codeUrl: "unity/Build/MyGame.wasm.br",
+                streamingAssetsUrl: "StreamingAssets",
+
+                companyName: "Frogjuice Studio",
+                productName: "SPLICE",
+                productVersion: "1.0"
+            }
+        ).then((unityInstance) => {
+            console.log("Unity loaded!");
+        }).catch((message) => {
+            console.error(message);
+        });
+    </script>
+
 
 
         <!-- CLOSE WELCOME -->
