@@ -1329,3 +1329,13 @@ strong {
   }
 }
 
+.game-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.game-link:hover {
+    text-decoration: none;
+}
