@@ -1,7 +1,15 @@
 
-function startGame(gameName) 
+function startGame(gameFolder) 
 {
   var unityFrame = document.getElementById("unityFrame");
-  unityFrame.display = "block";         
+  const gameUrl = `./unity/${gameFolder}/index.html`;
+  unityFrame.src = gameUrl;
+  unityFrame.style.display = "block";
 } 
          
+
+function closeGame() 
+{
+  var unityFrame = document.getElementById("unityFrame");
+  unityFrame.style.display = "none";
+} 

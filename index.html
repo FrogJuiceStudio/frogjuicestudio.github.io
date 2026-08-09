@@ -18,6 +18,7 @@
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/vegas.min.css" rel="stylesheet">
         <link href="css/tooplate-barista.css" rel="stylesheet">
+        <link href="css/unity.css" rel="stylesheet">
     </head>
 
     <body>
@@ -131,12 +132,12 @@
             <!-- UNITY -->
             <iframe
                 id="unityFrame"
-                src="./game/index.html"
+                class="game-overlay"
+                src=""
                 width="1280"
                 height="770"
                 frameborder="0"
-                allowfullscreen
-                style="display: none;">
+                allowfullscreen>
             </iframe>
             <!-- UNITY END -->
 
@@ -168,7 +169,7 @@
                         </div> -->
                         
                         <!-- GAME 1 -->
-                        <div class="col-lg-3 col-md-6 col-12 mb-4" onclick=startGame()>
+                        <div class="col-lg-3 col-md-6 col-12 mb-4" onclick="startGame('capy')">
                             <div class="team-block-wrap">
                                 <div class="team-block-info d-flex flex-column">
                                     <div class="d-flex mt-auto mb-3">
@@ -178,7 +179,7 @@
                                     <p class="text-white mb-0">description</p>
                                 </div>
                                 <div class="team-block-image-wrap">
-                                    <img class="team-block-image img-fluid" src="videos/splice_case.gif" alt="couldnt load GIF" onclick="startGame()">
+                                    <img class="team-block-image img-fluid" src="videos/splice_case.gif" alt="couldnt load GIF">
                                 </div>
                             </div>
                         </div>
@@ -285,6 +286,7 @@
         <script src="js/vegas.min.js"></script>
         <script src="js/custom.js"></script>
         <script src="js/my.js"></script>
+        <script src="js/unity.js"></script>
         <!-- JAVASCRIPT END -->
 
 
