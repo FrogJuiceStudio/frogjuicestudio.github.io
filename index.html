@@ -58,6 +58,7 @@
             </nav>
             <!-- NAVBAR END -->
 
+
             <!-- MAIN -->
             <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
 
@@ -125,13 +126,21 @@
                 
             </section>
             <!-- MAIN END -->
-<iframe
-    src="./game/index.html"
-    width="1280"
-    height="770"
-    frameborder="0"
-    allowfullscreen>
-</iframe>
+
+
+            <!-- UNITY -->
+            <iframe
+                id="unityFrame"
+                src="./game/index.html"
+                width="1280"
+                height="770"
+                frameborder="0"
+                allowfullscreen
+                style="display: none;">
+            </iframe>
+            <!-- UNITY END -->
+
+
             <!-- GAMES -->
             <section class="barista-section section-padding section-bg" id="section_games">
                 <div class="container">
@@ -159,7 +168,7 @@
                         </div> -->
                         
                         <!-- GAME 1 -->
-                        <div class="col-lg-3 col-md-6 col-12 mb-4">
+                        <div class="col-lg-3 col-md-6 col-12 mb-4" onclick=startGame()>
                             <div class="team-block-wrap">
                                 <div class="team-block-info d-flex flex-column">
                                     <div class="d-flex mt-auto mb-3">
@@ -169,7 +178,7 @@
                                     <p class="text-white mb-0">description</p>
                                 </div>
                                 <div class="team-block-image-wrap">
-                                    <img class="team-block-image img-fluid" src="videos/splice_case.gif" alt="couldnt load GIF">
+                                    <img class="team-block-image img-fluid" src="videos/splice_case.gif" alt="couldnt load GIF" onclick="startGame()">
                                 </div>
                             </div>
                         </div>
