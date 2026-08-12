@@ -28,20 +28,36 @@ games.forEach(game => {
              onclick="OnClickGame('${game.gameId}', event)">
 
             <div class="team-block-wrap">
-                <div class="team-block-info d-flex flex-column">
-                    <div class="d-flex mt-auto mb-3">
-                        <h4 class="text-white mb-0">${game.displayName}</h4>
-                        <p class="badge ms-4"><em>${game.badge}</em></p>
-                    </div>
 
-                    <p class="text-white mb-0">${game.description}</p>
-                </div>
+<div class="team-block-info d-flex flex-column">
+    <div class="d-flex mt-auto mb-2">
+        <h4 class="text-white mb-0">${game.displayName}</h4>
+        <p class="badge ms-4"><em>${game.badge}</em></p>
+    </div>
+
+    <div class="game-icons">
+        ${game.canBePlayed ? `
+            <i class="bi bi-play-fill game-icon" title="Playable"></i>
+        ` : ""}
+
+        ${game.steamPage ? `
+            <i class="bi bi-steam game-icon" title="Steam"></i>
+        ` : ""}
+
+        ${game.itchPage ? `
+            <i class="bi bi-controller game-icon" title="Itch.io"></i>
+        ` : ""}
+    </div>
+
+    <p class="text-white mb-0">${game.description}</p>
+</div>
 
                 <div class="team-block-image-wrap">
                     <img class="team-block-image img-fluid"
                          src="videos/${game.gameId}_case.gif"
                          alt="Couldn't load GIF">
                 </div>
+                
             </div>
 
         </div>

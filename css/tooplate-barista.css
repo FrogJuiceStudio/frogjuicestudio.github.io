@@ -31,7 +31,7 @@ https://www.tooplate.com/view/2137-barista-cafe
   --h1-font-size:                 68px;
   --h2-font-size:                 46px;
   --h3-font-size:                 32px;
-  --h4-font-size:                 28px;
+  --h4-font-size:                 24px;
   --h5-font-size:                 24px;
   --h6-font-size:                 22px;
   --p-font-size:                  20px;
@@ -783,7 +783,7 @@ strong {
   z-index: 2;
   top: 0;
   right: 0;
-  bottom: 0;
+  bottom: -28px;
   left: 0;
   padding: 30px;
 }
