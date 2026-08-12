@@ -71,8 +71,13 @@ function OnClickGame(gameId, event)
     // Build options dynamically
     var options = "";
 
+    var isMobile = navigator.userAgentData
+    ? navigator.userAgentData.mobile
+    : /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+    var isPC = !isMobile;
+
     if (game.canBePlayed) {
-        var isPC = /Windows|Macintosh|Linux/i.test(navigator.userAgent);
         if (isPC) {
             options += `
                 <div class="game-tooltip-option play-now-option">
