@@ -10,7 +10,8 @@
         <title>Frogjuice Studio</title>
         <link rel="icon" type="image/png" href="images/favicon.png">
 
-        <!-- CSS FILES -->                
+        <!-- CSS FILES -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">        
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">     
@@ -23,6 +24,8 @@
 
     <body>
         <main>
+
+
             <!-- NAVBAR  -->
             <nav class="navbar navbar-expand-lg">                
                 <div class="container">
@@ -39,28 +42,29 @@
                         <ul class="navbar-nav ms-lg-auto">
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">Upcoming!</a>
+                                <a class="nav-link click-scroll" href="#section_1">On Display</a>
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_games">Games</a>
+                                <a class="nav-link click-scroll" href="#section_games">My Games</a>
                             </li>
 
                         </ul>
 
-                        <!-- <div class="ms-lg-3">
-                            <a class="btn custom-btn custom-border-btn" href="https://igg.me/at/cellarboxed">
-                                Back This Game
+                        <div class="ms-lg-3">
+                            <!-- <a class="btn custom-btn custom-border-btn" href="https://ko-fi.com/frogjuicestudio"> -->
+                            <a class="btn custom-btn custom-border-btn" 
+                                href="https://ko-fi.com/frogjuicestudio" onclick="window.open(this.href, 'popup', 'width=1400,height=900'); return false;">
+                                💕 give me your tip
                                 <i class="bi-arrow-up-right ms-2"></i>
                             </a>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </nav>
             <!-- NAVBAR END -->
 
-
-            
+        
             <!-- MAIN -->
             <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
 
@@ -130,22 +134,19 @@
             <!-- MAIN END -->
 
 
-
             <!-- GAMES -->
             <section class="barista-section section-padding section-bg" id="section_games">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
-                            <em class="text-white">other</em>
+                            <em class="text-white">Frogjuice</em>
                             <h2 class="text-white">Games</h2>
                         </div>
-                        <div id="game-container" class="row"></div>
                         <div id="game-container" class="row"></div>
                     </div>
                 </div>
             </section>
             <!--GAMES END -->
-
 
 
             <!-- FOOTER -->
@@ -163,22 +164,17 @@
             <!--FOOTER END -->
 
 
-
             <!-- UNITY -->
             <div id="unityBackdrop" class="unity-backdrop"></div>
-
             <div id="unityContainer" class="unity-container">
                 <button id="closeUnity" class="unity-close" type="button">✕</button>
-
                 <iframe
                     id="unityFrame"
                     class="unity-overlay"
                     src="">
                 </iframe>
             </div>
-
             <!-- UNITY END -->
-
 
             
             <!-- AUDIOPLAYER.html -->
@@ -194,6 +190,7 @@
                 z-index: 9999;">
             </iframe> -->
             <!-- AUDIOPLAYER.html END-->
+
 
             <!-- WELCOME.html -->
             <!-- <iframe 

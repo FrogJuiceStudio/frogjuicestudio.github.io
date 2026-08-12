@@ -63,3 +63,96 @@
     background: #e53935;
     transform: scale(1.05);
 }
+
+#gameTooltip {
+    animation: rgbGlow 4s linear infinite;
+}
+
+@keyframes rgbGlow {
+    0% {
+        box-shadow:
+            0 0 8px rgba(255, 0, 0, 0.7),
+            0 0 18px rgba(255, 0, 0, 0.4);
+    }
+
+    33% {
+        box-shadow:
+            0 0 8px rgba(0, 255, 0, 0.7),
+            0 0 18px rgba(0, 255, 0, 0.4);
+    }
+
+    66% {
+        box-shadow:
+            0 0 8px rgba(0, 100, 255, 0.7),
+            0 0 18px rgba(0, 100, 255, 0.4);
+    }
+
+    100% {
+        box-shadow:
+            0 0 8px rgba(255, 0, 0, 0.7),
+            0 0 18px rgba(255, 0, 0, 0.4);
+    }
+}
+
+
+.game-tooltip-title {
+    padding: 6px 12px 10px 12px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    border-bottom: 1px solid #444;
+    margin-bottom: 4px;
+}
+
+.game-tooltip-option {
+    display: block !important;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.game-tooltip-option:hover {
+    background: #555;
+    color: #fff;
+}
+
+.game-tooltip-option:active {
+    background: #777;
+    transform: scale(0.97);
+}
+
+.play-now-option {
+    background: #2e7d32;
+}
+
+.play-now-option:hover {
+    background: #43a047;
+}
+
+.play-now-option:active {
+    background: #66bb6a;
+}
+
+.play-now-option.disabled {
+    background: #555;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.play-now-option.disabled:hover {
+    background: #555;
+}
+
+.game-tooltip-option i {
+    width: 20px;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.game-tooltip-title i {
+    margin-right: 8px;
+}
