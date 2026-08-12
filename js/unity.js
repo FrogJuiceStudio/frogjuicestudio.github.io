@@ -70,9 +70,9 @@ function OnClickGame(gameId, event)
 
     // Build options dynamically
     var options = "";
-    var isPC = /Windows|Macintosh|Linux/i.test(navigator.userAgent);
 
     if (game.canBePlayed) {
+        var isPC = /Windows|Macintosh|Linux/i.test(navigator.userAgent);
         if (isPC) {
             options += `
                 <div class="game-tooltip-option play-now-option">
