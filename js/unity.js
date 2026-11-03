@@ -1,23 +1,142 @@
 const games = [
+    // {
+    //     gameId: "Example Id",
+    //     displayName: "Example Name",
+    //     badge: "Example Badge",
+    //     description: "Example Description",
+    //     canBePlayed: true,
+    //     steamPage: "https://store.steampowered.com/curator/45232061",
+    //     itchPage: "https://frogjuice-studio.itch.io/",
+    // },
     {
-        gameId: "splice",
-        displayName: "SPLICE",
-        badge: "JAM",
+        gameId: "A part of me",
+        displayName: "",
+        badge: "",
         description: "",
         canBePlayed: true,
-        steamPage: "https://store.steampowered.com/app/123456/splice",
-        itchPage: "https://itch.io/splice",
+        itchPage: "",
+        steamPage: ""
     },
     {
-        gameId: "capy",
-        displayName: "CAPYBARA!",
-        badge: "JAM",
+        gameId: "EVERLAST",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "EXTINCT",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "Fish vs Sharkie",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "Fox in a Box",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "Frog looking for girlfriend",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "Frogo-Stick",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "Fungi Funeral",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "GHOULS!",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "MECATNIC",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "Skribbleknight",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "SPLICE",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
+        gameId: "TTK",
+        displayName: "",
+        badge: "",
         description: "",
         canBePlayed: false,
         itchPage: "",
         steamPage: ""
-    },    
+    },
+    {
+        gameId: "Tung Tung Forest",
+        displayName: "",
+        badge: "",
+        description: "",
+        canBePlayed: false,
+        itchPage: "",
+        steamPage: ""
+    },
 ];
+
+
 
 const gameContainer = document.getElementById("game-container");
 
@@ -31,7 +150,7 @@ games.forEach(game => {
 
                 <div class="team-block-info d-flex flex-column">
                     <div class="d-flex mt-auto mb-2">
-                        <h4 class="text-white mb-0">${game.displayName}</h4>
+                        <h4 class="text-white mb-0">${game.gameId}</h4>
                         <p class="badge ms-4"><em>${game.badge}</em></p>
                     </div>
 
@@ -52,7 +171,7 @@ games.forEach(game => {
 
                 <div class="team-block-image-wrap">
                     <img class="team-block-image img-fluid"
-                        src="videos/${game.gameId}_case.gif"
+                        src="myGames/${game.gameId}/${game.gameId}.gif"
                         alt="Couldn't load GIF">
                 </div>
                 
@@ -61,6 +180,8 @@ games.forEach(game => {
         </div>
     `;
 });
+
+var gameDirectory = "myGames";
 
 function OnHoverGame(gameId) 
 {
@@ -171,7 +292,7 @@ function OnStartGame(gameId)
     var unityFrame = document.getElementById("unityFrame");
     var unityContainer = document.getElementById("unityContainer");
     var unityBackdrop = document.getElementById("unityBackdrop");
-    unityFrame.src = `./unity/${gameId}/index.html`;
+    unityFrame.src = `./myGames/${gameId}/Build/index.html`;
     unityContainer.style.display = "block";
     unityBackdrop.style.display = "block";
 }
