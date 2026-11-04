@@ -775,10 +775,10 @@ strong {
 
 .team-block-info {
   background-image:
-    linear-gradient(to top, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
-    linear-gradient(to left, rgba(255, 255, 255, 0) 60%, var(--section-bg-color)),
-    linear-gradient(to right, rgba(255, 255, 255, 0) 60%, var(--section-bg-color));
+    linear-gradient(to top, rgba(255, 255, 255, 0) 70%, var(--section-bg-color)),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 64%, var(--section-bg-color)),
+    linear-gradient(to left, rgba(255, 255, 255, 0) 72%, var(--section-bg-color)),
+    linear-gradient(to right, rgba(255, 255, 255, 0) 72%, var(--section-bg-color));
   position: absolute;
   /* z-index: 2; */
   top: 0;
