@@ -142,13 +142,13 @@ const gameContainer = document.getElementById("game-container");
 
 games.forEach(game => {
     gameContainer.innerHTML += `
-        <div class="col-lg-3 col-md-6 col-12 mb-4"
-             onmouseover="OnHoverGame('${game.gameId}')"
-             onclick="OnClickGame('${game.gameId}', event)">
+        <div class="col-lg-3 col-md-6 col-12 mb-4">
+            <div class="team-block-wrap"
+                onclick="OnClickGame('${game.gameId}', event)"
+                onmouseenter="OnHoverGame('${game.gameId}', event)"
+                onmouseout="OnUnhoverGame('${game.gameId}', event)">
 
-            <div class="team-block-wrap">
-
-                <div class="team-block-info d-flex flex-column">
+                <div class="team-block-info d-flex flex-column" style="pointer-events: none;">
                     <div class="d-flex mt-auto mb-2">
                         <h4 class="text-white mb-0">${game.gameId}</h4>
                         <p class="badge ms-4"><em>${game.badge}</em></p>
@@ -171,8 +171,9 @@ games.forEach(game => {
 
                 <div class="team-block-image-wrap">
                     <img class="team-block-image img-fluid"
-                        src="myGames/${game.gameId}/${game.gameId}.gif"
-                        alt="Couldn't load GIF">
+                        id = "${game.gameId}"
+                        src="myGames/${game.gameId}/frame0000.png"
+                    >
                 </div>
                 
             </div>
@@ -181,11 +182,17 @@ games.forEach(game => {
     `;
 });
 
-var gameDirectory = "myGames";
 
-function OnHoverGame(gameId) 
+function OnHoverGame(gameId, event)
 {
+    var gameElement = document.getElementById(gameId);
+    gameElement.src = `myGames/${gameId}/${gameId}.gif`;
+}
 
+function OnUnhoverGame(gameId, event)
+{
+    var gameElement = document.getElementById(gameId);
+    gameElement.src = `myGames/${gameId}/frame0000.png`;
 }
 
 function OnClickGame(gameId, event)
@@ -215,7 +222,8 @@ function OnClickGame(gameId, event)
     if (game.canBePlayed) {
         if (isPC) {
             options += `
-                <div class="game-tooltip-option play-now-option">
+                <div class="game-tooltip-option play-now-option"
+                    onclick="OnStartGame('${game.gameId}')">
                     <i class="bi bi-play-fill"></i>
                     Play
                 </div>
