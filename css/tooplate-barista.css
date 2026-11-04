@@ -752,7 +752,7 @@ strong {
   background-color: var(--section-bg-color);
   border-radius: var(--border-radius-medium);
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   max-height: 450px;
   cursor: pointer;
 }
@@ -780,7 +780,7 @@ strong {
     linear-gradient(to left, rgba(255, 255, 255, 0) 60%, var(--section-bg-color)),
     linear-gradient(to right, rgba(255, 255, 255, 0) 60%, var(--section-bg-color));
   position: absolute;
-  z-index: 2;
+  /* z-index: 2; */
   top: 0;
   right: 0;
   bottom: -28px;
