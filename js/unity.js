@@ -183,25 +183,42 @@ games.forEach(game => {
     `;
 });
 
-function PreloadGameGifs() {
-    console.log("PreloadGameGifs");
-    document.querySelectorAll(".game-image").forEach(img => {
-        console.log("step ");
+const gameGifs = {};
 
+function PreloadGameGifs() {
+    console.log("%cPreloading GIFs...", "color: cyan;");
+
+    document.querySelectorAll(".game-image").forEach(img => {
         const gameId = img.id;
 
         const preload = new Image();
+
+        preload.onload = () => {
+            console.log("%cLoaded: " + gameId, "color: lime;");
+            gameGifs[gameId] = preload;
+        };
+
+        preload.onerror = () => {
+            console.error("Failed to load: " + gameId);
+        };
+
         preload.src = `myGames/${gameId}/${gameId}.gif`;
     });
 }
 
-window.addEventListener("load", PreloadGameGifs);
+// window.addEventListener("load", PreloadGameGifs);
+document.addEventListener("DOMContentLoaded", () => {
+    PreloadGameGifs();
+});
 
+function OnHoverGame(gameId) {
+    const gameElement = document.getElementById(gameId);
 
-function OnHoverGame(gameId, event)
-{
-    var gameElement = document.getElementById(gameId);
-    gameElement.src = `myGames/${gameId}/${gameId}.gif`;
+    if (gameGifs[gameId]) {
+        gameElement.src = gameGifs[gameId].src;
+    } else {
+        console.warn("GIF isn't loaded yet:", gameId);
+    }
 }
 
 function OnUnhoverGame(gameId, event)
