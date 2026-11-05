@@ -213,12 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function OnHoverGame(gameId) {
     const gameElement = document.getElementById(gameId);
-
-    if (gameGifs[gameId]) {
-        gameElement.src = gameGifs[gameId].src;
-    } else {
-        console.warn("GIF isn't loaded yet:", gameId);
-    }
+    gameElement.src = `myGames/${gameId}/${gameId}.gif?t=${Date.now()}`;
 }
 
 function OnUnhoverGame(gameId, event)
