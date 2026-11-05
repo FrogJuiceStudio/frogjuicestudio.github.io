@@ -185,12 +185,14 @@ games.forEach(game => {
 
 function OnHoverGame(gameId, event)
 {
+    console.log("%cHover Start [" + gameId +"]", "color: cyan;");
     var gameElement = document.getElementById(gameId);
     gameElement.play();
 }
 
 function OnUnhoverGame(gameId, event)
 {
+    console.log("%cHover Stop [" + gameId +"]", "color: orange;");
     var gameElement = document.getElementById(gameId);    
     gameElement.pause();
     gameElement.currentTime = 0;
@@ -200,7 +202,10 @@ function OnClickGame(gameId, event)
 {
     var game = games.find(g => g.gameId === gameId);
 
-    if (!game) return;
+    if (!game){
+        console.log("%cGame not found! [" + gameId +"]", "color: red;");
+        return;
+    }
 
     // Remove existing tooltip
     var existingTooltip = document.getElementById("gameTooltip");
@@ -264,7 +269,7 @@ function OnClickGame(gameId, event)
     }
     
     // Don't show an empty tooltip
-    if (!options) return;
+    // if (!options) return;
 
     tooltip.innerHTML = `
         <div class="game-tooltip-title">
