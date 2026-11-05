@@ -616,18 +616,22 @@ strong {
 }
 
 .trailer {
-  object-fit:none;
-  width: 100%;
+  /* object-fit:none; */
+  /* width: 100%; */
   height: 100%;
   position: absolute !important;
 }
 
 .trailer-gradient {
+  /* background-image:
+    radial-gradient(circle, #0000 60%, var(--section-bg-color) 100%),
+    linear-gradient(to top, rgba(255, 255, 255, 0) 25%, var(--section-bg-color)) 100%,
+    ; */
   background-image:
     linear-gradient(to top, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
-    linear-gradient(to left, rgba(255, 255, 255, 0) 95%, var(--section-bg-color)),
-    linear-gradient(to right, rgba(255, 255, 255, 0) 95%, var(--section-bg-color));
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, var(--section-bg-color)),
+    linear-gradient(to left, rgba(255, 255, 255, 0) calc(95% - 5vw), var(--section-bg-color)),
+    linear-gradient(to right, rgba(255, 255, 255, 0) calc(95% - 5vw), var(--section-bg-color));
   object-fit:none;
   width: 101%;
   height: 101%;
