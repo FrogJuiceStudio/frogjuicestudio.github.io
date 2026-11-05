@@ -137,7 +137,6 @@ const games = [
 ];
 
 
-console.log("%cversion_" + 0, "color: red;");
 
 const gameContainer = document.getElementById("game-container");
 
@@ -171,7 +170,7 @@ games.forEach(game => {
                 </div>
 
                 <div class="team-block-image-wrap">
-                    <img class="team-block-image img-fluid game-image"
+                    <img class="team-block-image img-fluid"
                         id = "${game.gameId}"
                         src="myGames/${game.gameId}/frame0000.png"
                     >
@@ -183,37 +182,11 @@ games.forEach(game => {
     `;
 });
 
-const gameGifs = {};
 
-function PreloadGameGifs() {
-    console.log("%cPreloading GIFs...", "color: cyan;");
-
-    document.querySelectorAll(".game-image").forEach(img => {
-        const gameId = img.id;
-
-        const preload = new Image();
-
-        preload.onload = () => {
-            console.log("%cLoaded: " + gameId, "color: lime;");
-            gameGifs[gameId] = preload;
-        };
-
-        preload.onerror = () => {
-            console.error("Failed to load: " + gameId);
-        };
-
-        preload.src = `myGames/${gameId}/${gameId}.gif`;
-    });
-}
-
-// window.addEventListener("load", PreloadGameGifs);
-document.addEventListener("DOMContentLoaded", () => {
-    PreloadGameGifs();
-});
-
-function OnHoverGame(gameId) {
-    const gameElement = document.getElementById(gameId);
-    gameElement.src = `myGames/${gameId}/${gameId}.gif?t=${Date.now()}`;
+function OnHoverGame(gameId, event)
+{
+    var gameElement = document.getElementById(gameId);
+    gameElement.src = `myGames/${gameId}/${gameId}.gif`;
 }
 
 function OnUnhoverGame(gameId, event)
