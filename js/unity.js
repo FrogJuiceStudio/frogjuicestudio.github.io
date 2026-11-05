@@ -170,10 +170,10 @@ games.forEach(game => {
                 </div>
 
                 <div class="team-block-image-wrap">
-                    <img class="team-block-image img-fluid"
+                    <video class="team-block-image img-fluid"
                         id = "${game.gameId}"
-                        src="myGames/${game.gameId}/frame0000.png"
-                    >
+                        src="myGames/${game.gameId}/${game.gameId}.webm"
+                    ></video>
                 </div>
                 
             </div>
@@ -186,13 +186,14 @@ games.forEach(game => {
 function OnHoverGame(gameId, event)
 {
     var gameElement = document.getElementById(gameId);
-    gameElement.src = `myGames/${gameId}/${gameId}.gif`;
+    gameElement.play();
 }
 
 function OnUnhoverGame(gameId, event)
 {
-    var gameElement = document.getElementById(gameId);
-    gameElement.src = `myGames/${gameId}/frame0000.png`;
+    var gameElement = document.getElementById(gameId);    
+    gameElement.pause();
+    gameElement.currentTime = 0;
 }
 
 function OnClickGame(gameId, event)
