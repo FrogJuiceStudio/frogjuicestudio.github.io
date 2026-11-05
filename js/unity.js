@@ -170,9 +170,8 @@ games.forEach(game => {
                 </div>
 
                 <div class="team-block-image-wrap">
-                    <img class="team-block-image img-fluid"
+                    <img class="team-block-image img-fluid game-image"
                         id = "${game.gameId}"
-                        class = "game-image"
                         src="myGames/${game.gameId}/frame0000.png"
                     >
                 </div>
@@ -184,7 +183,10 @@ games.forEach(game => {
 });
 
 function PreloadGameGifs() {
+    console.log("PreloadGameGifs");
     document.querySelectorAll(".game-image").forEach(img => {
+        console.log("step ");
+
         const gameId = img.id;
 
         const preload = new Image();
