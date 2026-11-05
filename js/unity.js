@@ -172,6 +172,7 @@ games.forEach(game => {
                 <div class="team-block-image-wrap">
                     <img class="team-block-image img-fluid"
                         id = "${game.gameId}"
+                        class = "game-image"
                         src="myGames/${game.gameId}/frame0000.png"
                     >
                 </div>
@@ -181,6 +182,17 @@ games.forEach(game => {
         </div>
     `;
 });
+
+function PreloadGameGifs() {
+    document.querySelectorAll(".game-image").forEach(img => {
+        const gameId = img.id;
+
+        const preload = new Image();
+        preload.src = `myGames/${gameId}/${gameId}.gif`;
+    });
+}
+
+window.addEventListener("load", PreloadGameGifs);
 
 
 function OnHoverGame(gameId, event)
