@@ -137,6 +137,7 @@ const games = [
 ];
 
 
+console.log("version_" + 0);
 
 const gameContainer = document.getElementById("game-container");
 
