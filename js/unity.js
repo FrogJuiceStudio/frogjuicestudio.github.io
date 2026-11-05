@@ -139,9 +139,13 @@ const games = [
 
 
 const gameContainer = document.getElementById("game-container");
+var gameContainerHTML = "";
 
 games.forEach(game => {
-    gameContainer.innerHTML += `
+
+    console.log("%cforEach", "color: cyan;");
+    
+    gameContainerHTML += `
         <div class="col-lg-3 col-md-6 col-12 mb-4">
             <div class="team-block-wrap"
                 onclick="OnClickGame('${game.gameId}', event)"
@@ -149,7 +153,7 @@ games.forEach(game => {
                 onmouseout="OnUnhoverGame('${game.gameId}', event)">
 
                 <div class="team-block-info d-flex flex-column" style="pointer-events: none;">
-                    <div class="d-flex mt-auto mb-2">
+                    <div class="d-flex mt-auto mb-2" style="z-index: 1">
                         <h4 class="text-white mb-0">${game.gameId}</h4>
                         <p class="badge ms-4"><em>${game.badge}</em></p>
                     </div>
@@ -173,6 +177,7 @@ games.forEach(game => {
                     <video class="team-block-image img-fluid"
                         id = "${game.gameId}"
                         src="myGames/${game.gameId}/${game.gameId}.webm"
+                        style="filter: contrast(1.1)"
                     ></video>
                 </div>
                 
@@ -182,6 +187,7 @@ games.forEach(game => {
     `;
 });
 
+gameContainer.innerHTML += gameContainerHTML;
 
 function OnHoverGame(gameId, event)
 {
@@ -200,6 +206,8 @@ function OnUnhoverGame(gameId, event)
 
 function OnClickGame(gameId, event)
 {
+    console.log("%cCick Game [" + gameId +"]", "color: green;");
+
     var game = games.find(g => g.gameId === gameId);
 
     if (!game){
