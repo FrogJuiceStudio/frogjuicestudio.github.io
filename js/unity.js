@@ -137,7 +137,7 @@ const games = [
 ];
 
 
-console.log("version_" + 0);
+console.log("%cversion_" + 0, "color: red;");
 
 const gameContainer = document.getElementById("game-container");
 
