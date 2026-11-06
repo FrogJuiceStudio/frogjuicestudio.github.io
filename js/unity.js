@@ -188,16 +188,16 @@ games.forEach(game => {
 });
 
 gameContainer.innerHTML += gameContainerHTML;
-    
+
 games.forEach(game => {
-    OnTest(game.gameId);
+    InitCovers(game.gameId);
 });
 
-function OnTest(gameId, event)
+function InitCovers(gameId)
 {
-    console.log("%OnTest [" + gameId +"]", "color: cyan;");
+    // console.log("%InitCovers [" + gameId +"]", "color: cyan;");
     var gameElement = document.getElementById(gameId);
-    gameElement.currentTime = 1;
+    // gameElement.currentTime = 0.6;
     gameElement.pause();
 }
 
