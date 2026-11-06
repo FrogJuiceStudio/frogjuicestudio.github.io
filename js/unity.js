@@ -143,7 +143,7 @@ var gameContainerHTML = "";
 
 games.forEach(game => {
 
-    console.log("%cforEach", "color: cyan;");
+    console.log("%cbuild gameContainer.innerHTML", "color: green;");
     
     gameContainerHTML += `
         <div class="col-lg-3 col-md-6 col-12 mb-4">
@@ -195,7 +195,7 @@ games.forEach(game => {
 
 function InitCover(gameId)
 {
-    // console.log("%InitCovers [" + gameId +"]", "color: cyan;");
+    console.log("%cInitCover ["+gameId+"]", "color: green;");
     var gameElement = document.getElementById(gameId);
     // gameElement.currentTime = 0.6;
     gameElement.pause();
@@ -204,14 +204,14 @@ function InitCover(gameId)
 
 function OnHoverGame(gameId, event)
 {
-    console.log("%cHover Start [" + gameId +"]", "color: cyan;");
+    console.log("%cHover ["+gameId+"]", "color: cyan;");
     var gameElement = document.getElementById(gameId);
     gameElement.play();
 }
 
 function OnUnhoverGame(gameId, event)
 {
-    console.log("%cHover Stop [" + gameId +"]", "color: orange;");
+    console.log("%cUnhover ["+gameId+"]", "color: orange;");
     var gameElement = document.getElementById(gameId);    
     gameElement.pause();
     gameElement.currentTime = 0;
@@ -219,7 +219,7 @@ function OnUnhoverGame(gameId, event)
 
 function OnClickGame(gameId, event)
 {
-    console.log("%cCick Game [" + gameId +"]", "color: green;");
+    console.log("%cCick ["+gameId+"]", "color: cyan;");
 
     var game = games.find(g => g.gameId === gameId);
 
