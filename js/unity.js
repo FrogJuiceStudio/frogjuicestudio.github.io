@@ -197,8 +197,8 @@ function InitCover(gameId)
 {
     console.log("%cInitCover ["+gameId+"]", "color: green;");
     var gameElement = document.getElementById(gameId);
-    // gameElement.currentTime = 0.6;
-    gameElement.pause();
+    gameElement.currentTime = .8;
+    // gameElement.pause();
 }
 
 
