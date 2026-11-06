@@ -188,6 +188,19 @@ games.forEach(game => {
 });
 
 gameContainer.innerHTML += gameContainerHTML;
+    
+games.forEach(game => {
+    OnTest(game.gameId);
+});
+
+function OnTest(gameId, event)
+{
+    console.log("%OnTest [" + gameId +"]", "color: cyan;");
+    var gameElement = document.getElementById(gameId);
+    gameElement.currentTime = 1;
+    gameElement.pause();
+}
+
 
 function OnHoverGame(gameId, event)
 {
