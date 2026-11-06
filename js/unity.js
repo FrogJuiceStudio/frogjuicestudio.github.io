@@ -198,7 +198,6 @@ function InitCover(gameId)
     console.log("%cInitCover ["+gameId+"]", "color: green;");
     var gameElement = document.getElementById(gameId);
     gameElement.currentTime = .8;
-    // gameElement.pause();
 }
 
 
@@ -214,7 +213,7 @@ function OnUnhoverGame(gameId, event)
     console.log("%cUnhover ["+gameId+"]", "color: orange;");
     var gameElement = document.getElementById(gameId);    
     gameElement.pause();
-    gameElement.currentTime = 0;
+    gameElement.currentTime = .8;
 }
 
 function OnClickGame(gameId, event)
