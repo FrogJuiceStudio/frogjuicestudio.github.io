@@ -190,10 +190,10 @@ games.forEach(game => {
 gameContainer.innerHTML += gameContainerHTML;
 
 games.forEach(game => {
-    InitCovers(game.gameId);
+    InitCover(game.gameId);
 });
 
-function InitCovers(gameId)
+function InitCover(gameId)
 {
     // console.log("%InitCovers [" + gameId +"]", "color: cyan;");
     var gameElement = document.getElementById(gameId);
