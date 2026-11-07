@@ -65,7 +65,10 @@
 }
 
 #gameTooltip {
-    animation: rgbGlow 4s linear infinite;
+    animation: rgbGlow 4s linear infinite, tooltipGrow 0.2s cubic-bezier(.18,.89,.32,1.8) forwards;
+    transform: scale(0.8);
+    opacity: 0;
+    transform-origin: top left;
 }
 
 @keyframes rgbGlow {
@@ -91,6 +94,17 @@
         box-shadow:
             0 0 8px rgba(255, 0, 0, 0.7),
             0 0 18px rgba(255, 0, 0, 0.4);
+    }
+}
+
+@keyframes tooltipGrow {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
     }
 }
 

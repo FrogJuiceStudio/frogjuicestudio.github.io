@@ -254,6 +254,7 @@ function OnClickGame(gameId, event)
 
     var tooltip = document.createElement("div");
     tooltip.id = "gameTooltip";
+    // tooltip.classList.add("game-tooltip");
 
     // Build options dynamically
     var options = "";
@@ -309,6 +310,7 @@ function OnClickGame(gameId, event)
     
     // Don't show an empty tooltip
     // if (!options) return;
+    // tooltip.classList.add("game-tooltip");
 
     tooltip.innerHTML = `
         <div class="game-tooltip-title">
