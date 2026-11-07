@@ -10,8 +10,9 @@ const games = [
     // },
     {
         gameId: "A part of me",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "baba is who?",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -19,8 +20,9 @@ const games = [
     },
     {
         gameId: "EVERLAST",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "spooky",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -28,8 +30,9 @@ const games = [
     },
     {
         gameId: "EXTINCT",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "has dinos",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -37,6 +40,7 @@ const games = [
     },
     {
         gameId: "Fish vs Sharkie",
+        priority: 99,
         displayName: "",
         badge: "",
         description: "",
@@ -46,8 +50,9 @@ const games = [
     },
     {
         gameId: "Fox in a Box",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "who let the fox out?",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -55,8 +60,9 @@ const games = [
     },
     {
         gameId: "Frog looking for girlfriend",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "what is luv?",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -64,8 +70,9 @@ const games = [
     },
     {
         gameId: "Frogo-Stick",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "boing",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -73,8 +80,9 @@ const games = [
     },
     {
         gameId: "Fungi Funeral",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "jesse we need to cook",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -82,8 +90,9 @@ const games = [
     },
     {
         gameId: "GHOULS!",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "jam winner!",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -91,8 +100,9 @@ const games = [
     },
     {
         gameId: "MECATNIC",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "pspspsbzzz",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -100,8 +110,9 @@ const games = [
     },
     {
         gameId: "Skribbleknight",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "the level is your oyster",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -109,6 +120,7 @@ const games = [
     },
     {
         gameId: "SPLICE",
+        priority: 99,
         displayName: "",
         badge: "",
         description: "",
@@ -118,8 +130,9 @@ const games = [
     },
     {
         gameId: "TTK",
-        displayName: "",
-        badge: "",
+        priority: 99,
+        displayName: "TTK: Talk to Kill",
+        badge: "did you know?",
         description: "",
         canBePlayed: false,
         itchPage: "",
@@ -127,8 +140,9 @@ const games = [
     },
     {
         gameId: "Tung Tung Forest",
+        priority: 99,
         displayName: "",
-        badge: "",
+        badge: "brainrot P.T.",
         description: "",
         canBePlayed: false,
         itchPage: "",
@@ -136,7 +150,7 @@ const games = [
     },
 ];
 
-
+games.sort((a, b) => a.priority - b.priority);
 
 const gameContainer = document.getElementById("game-container");
 var gameContainerHTML = "";
@@ -155,7 +169,7 @@ games.forEach(game => {
                 <div class="team-block-info d-flex flex-column" style="pointer-events: none;">
                     <div class="d-flex mt-auto mb-2" style="z-index: 1">
                         <h4 class="text-white mb-0">${game.gameId}</h4>
-                        <p class="badge ms-4"><em>${game.badge}</em></p>
+                        <!-- <p class="badge ms-4"><em>${game.badge}</em></p> -->
                     </div>
 
                     <div class="game-icons">
@@ -177,7 +191,7 @@ games.forEach(game => {
                     <video loop class="team-block-image img-fluid"
                         id = "${game.gameId}"
                         src="myGames/${game.gameId}/${game.gameId}.webm"
-                        style="filter: contrast(1.1)"
+                        style="filter: contrast(1.1); position: relative"
                     ></video>
                 </div>
                 
@@ -197,7 +211,7 @@ function InitCover(gameId)
 {
     console.log("%cInitCover ["+gameId+"]", "color: green;");
     var gameElement = document.getElementById(gameId);
-    gameElement.currentTime = .8;
+    gameElement.currentTime = .75;
 }
 
 
@@ -206,6 +220,7 @@ function OnHoverGame(gameId, event)
     console.log("%cHover ["+gameId+"]", "color: cyan;");
     var gameElement = document.getElementById(gameId);
     gameElement.play();
+    gameElement.style.zIndex = 1;
 }
 
 function OnUnhoverGame(gameId, event)
@@ -214,6 +229,7 @@ function OnUnhoverGame(gameId, event)
     var gameElement = document.getElementById(gameId);    
     gameElement.pause();
     gameElement.currentTime = .8;
+    gameElement.style.zIndex = 0;
 }
 
 function OnClickGame(gameId, event)
