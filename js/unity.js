@@ -12,7 +12,7 @@ const games = [
         gameId: "A part of me",
         priority: 99,
         displayName: "",
-        badge: "baba is who?",
+        badge: "",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -22,7 +22,7 @@ const games = [
         gameId: "EVERLAST",
         priority: 99,
         displayName: "",
-        badge: "spooky",
+        badge: "",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -32,7 +32,7 @@ const games = [
         gameId: "EXTINCT",
         priority: 99,
         displayName: "",
-        badge: "has dinos",
+        badge: "",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -52,7 +52,7 @@ const games = [
         gameId: "Fox in a Box",
         priority: 99,
         displayName: "",
-        badge: "who let the fox out?",
+        badge: "",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -62,7 +62,7 @@ const games = [
         gameId: "Frog looking for girlfriend",
         priority: 99,
         displayName: "",
-        badge: "what is luv?",
+        badge: "",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -72,7 +72,7 @@ const games = [
         gameId: "Frogo-Stick",
         priority: 99,
         displayName: "",
-        badge: "boing",
+        badge: "",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -82,7 +82,7 @@ const games = [
         gameId: "Fungi Funeral",
         priority: 99,
         displayName: "",
-        badge: "jesse we need to cook",
+        badge: "",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -102,7 +102,7 @@ const games = [
         gameId: "MECATNIC",
         priority: 99,
         displayName: "",
-        badge: "pspspsbzzz",
+        badge: "",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -112,7 +112,7 @@ const games = [
         gameId: "Skribbleknight",
         priority: 99,
         displayName: "",
-        badge: "the level is your oyster",
+        badge: "",
         description: "",
         canBePlayed: true,
         itchPage: "",
@@ -132,7 +132,7 @@ const games = [
         gameId: "TTK",
         priority: 99,
         displayName: "TTK: Talk to Kill",
-        badge: "did you know?",
+        badge: "my first game",
         description: "",
         canBePlayed: false,
         itchPage: "",
@@ -142,7 +142,7 @@ const games = [
         gameId: "Tung Tung Forest",
         priority: 99,
         displayName: "",
-        badge: "brainrot P.T.",
+        badge: "",
         description: "",
         canBePlayed: false,
         itchPage: "",
@@ -165,13 +165,16 @@ games.forEach(game => {
                 onclick="OnClickGame('${game.gameId}', event)"
                 onmouseenter="OnHoverGame('${game.gameId}', event)"
                 onmouseout="OnUnhoverGame('${game.gameId}', event)">
-
+               
                 <div class="team-block-info d-flex flex-column" style="pointer-events: none;">
+
+                    <!-- NAME + BADGE -->
                     <div class="d-flex mt-auto mb-2" style="z-index: 1">
                         <h4 class="text-white mb-0">${game.gameId}</h4>
                         <!-- <p class="badge ms-4"><em>${game.badge}</em></p> -->
                     </div>
 
+                    <!-- ICONS -->
                     <div class="game-icons">
                         ${game.canBePlayed ? `
                             <i class="bi bi-play-fill game-icon" title="Playable in Browser"></i>
@@ -183,10 +186,10 @@ games.forEach(game => {
                             <i class="bi bi-controller game-icon" title="Available on Itch.io"></i>
                         ` : ""}
                     </div>
-
-                    <p class="text-white mb-0">${game.description}</p>
+                    
                 </div>
-
+                
+                <!-- COVER -->
                 <div class="team-block-image-wrap">
                     <video loop class="team-block-image img-fluid"
                         id = "${game.gameId}"
