@@ -174,7 +174,7 @@ games.forEach(game => {
                 </div>
 
                 <div class="team-block-image-wrap">
-                    <video class="team-block-image img-fluid"
+                    <video loop class="team-block-image img-fluid"
                         id = "${game.gameId}"
                         src="myGames/${game.gameId}/${game.gameId}.webm"
                         style="filter: contrast(1.1)"
@@ -294,7 +294,7 @@ function OnClickGame(gameId, event)
     tooltip.innerHTML = `
         <div class="game-tooltip-title">
             <i class="bi bi-joystick"></i>
-            ${game.displayName}
+            ${game.gameId}
         </div>
         ${options}
     `;
