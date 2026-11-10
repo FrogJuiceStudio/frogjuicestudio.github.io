@@ -219,23 +219,49 @@ function InitCover(gameId)
 
 function OnHoverGame(gameId, event)
 {
+    if(tooltipGameId == gameId) return;
+    if(tooltipGameId != ""){
+        console.log("Tooltip still open ["+gameId+"]");
+        var unhoverId = tooltipGameId;
+        tooltipGameId = "";
+        OnUnhoverGame(unhoverId);
+    }
+    RemoveExistingTooltip();
     console.log("%cHover ["+gameId+"]", "color: cyan;");
     var gameElement = document.getElementById(gameId);
     gameElement.play();
     gameElement.style.zIndex = 1;
+    gameElement.style.transform = "scale(1.18)";
 }
 
-function OnUnhoverGame(gameId, event)
+function RemoveExistingTooltip()
 {
+    // Remove existing tooltip
+    var existingTooltip = document.getElementById("gameTooltip");
+    if (existingTooltip) {
+        existingTooltip.remove();
+    }
+}
+
+function OnUnhoverGame(gameId)
+{
+    if(tooltipGameId == gameId){
+        var gameElement = document.getElementById(gameId);
+        gameElement.style.transform = "scale(1.18)";
+        return;
+    }
     console.log("%cUnhover ["+gameId+"]", "color: orange;");
-    var gameElement = document.getElementById(gameId);    
+    var gameElement = document.getElementById(gameId);
     gameElement.pause();
     gameElement.currentTime = .8;
     gameElement.style.zIndex = 0;
+    gameElement.style.transform = "scale(1)";
 }
 
+var tooltipGameId = "";
 function OnClickGame(gameId, event)
 {
+    tooltipGameId = gameId;
     console.log("%cCick ["+gameId+"]", "color: cyan;");
 
     var game = games.find(g => g.gameId === gameId);
@@ -316,6 +342,7 @@ function OnClickGame(gameId, event)
         </div>
         ${options}
     `;
+
 
     tooltip.style.position = "absolute";
     tooltip.style.left = event.pageX + "px";
