@@ -171,6 +171,11 @@ function Start(){
     unityContainer.addEventListener("focus", OnUnityFocusEnter);
     unityContainer.addEventListener("blur", OnUnityFocusExit);
 
+
+    unityFrame.addEventListener("load", () => {
+        unityFrame.contentWindow.addEventListener("click", OnUnityClick);
+    });
+
 }
 
 function SortGames(){
