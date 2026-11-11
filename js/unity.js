@@ -161,21 +161,33 @@ function Start(){
     InitCovers();
     AddPageClickListener();
     
+    // var unityFrame = document.getElementById("unityFrame");
+    // unityFrame.addEventListener("click", OnUnityClick);
+    // unityFrame.addEventListener("focus", OnUnityFocusEnter);
+    // unityFrame.addEventListener("blur", OnUnityFocusExit);
+
+    // var unityContainer = document.getElementById("unityContainer");
+    // unityContainer.addEventListener("click", OnUnityClick);
+    // unityContainer.addEventListener("focus", OnUnityFocusEnter);
+    // unityContainer.addEventListener("blur", OnUnityFocusExit);
+
     var unityFrame = document.getElementById("unityFrame");
-    unityFrame.addEventListener("click", OnUnityClick);
-    unityFrame.addEventListener("focus", OnUnityFocusEnter);
-    unityFrame.addEventListener("blur", OnUnityFocusExit);
-
-    var unityContainer = document.getElementById("unityContainer");
-    unityContainer.addEventListener("click", OnUnityClick);
-    unityContainer.addEventListener("focus", OnUnityFocusEnter);
-    unityContainer.addEventListener("blur", OnUnityFocusExit);
-
-
     unityFrame.addEventListener("load", () => {
         unityFrame.contentWindow.addEventListener("click", OnUnityClick);
+        unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
+        unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
     });
 
+    var unityBackdrop = document.getElementById("unityBackdrop");
+    unityBackdrop.addEventListener("load", () => {
+        unityBackdrop.contentWindow.addEventListener("click", OnBackdrop);
+        unityBackdrop.contentWindow.addEventListener("focus", OnBackdrop);
+        unityBackdrop.contentWindow.addEventListener("blur", OnBackdrop);
+    });
+}
+
+function OnBackdrop(){
+    console.log("%c OnBackdrop", "color: lightgreen;");
 }
 
 function SortGames(){
