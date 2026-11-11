@@ -734,7 +734,7 @@ strong {
 }
 
 .new-game-wrap:hover .team-block-image {
-  /* transform: scale(1.2); */
+  transform: scale(1.2);
 }
 
 .new-game-info {
