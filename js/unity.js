@@ -443,12 +443,12 @@ function OnUnityClick(){
 function OnUnityFocusEnter(){
     console.log("%c >> FOCUS ENTER", "color: steelblue;");
     var unityFrame = document.getElementById("unityFrame");
-    unityFrame.style.filter = ("blur:0px")
+    unityFrame.style.filter = "blur:(0px)";
 }
 function OnUnityFocusExit(){
     console.log("%c >> FOCUS EXIT", "color: lightpink;");
     var unityFrame = document.getElementById("unityFrame");
-    unityFrame.style.filter = ("blur:10px")
+    unityFrame.style.filter = "blur:(10px)";
 }
 
 function closeGame() 
