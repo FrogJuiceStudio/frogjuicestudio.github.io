@@ -205,7 +205,7 @@ function BuildGameContainer(){
                     </div>
                     
                     <!-- COVER -->
-                    <div class="team-block-image-wrap">
+                    <div class="team-block-image-wrap glow">
                         <video loop class="team-block-image img-fluid"
                             id = "${game.gameId}"
                             src="myGames/${game.gameId}/${game.gameId}.webm"
@@ -253,6 +253,7 @@ function PlayAnim(gameId){
     gameElement.play();
     gameElement.style.zIndex = 1;
     gameElement.style.transform = "scale(1.2)";
+    gameElement.parentElement.style.zIndex = 1;
 }
 
 function StopAnim(gameId){
@@ -262,6 +263,7 @@ function StopAnim(gameId){
     gameElement.currentTime = .75;
     gameElement.style.zIndex = 0;
     gameElement.style.transform = "scale(1)";
+    gameElement.parentElement.style.zIndex = 0;
 }
 
 

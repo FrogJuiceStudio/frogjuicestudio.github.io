@@ -226,3 +226,28 @@
 .tooltip-close:hover {
     color: #ff5555;
 }
+
+
+
+.glow {
+    position: relative;
+    border-radius: 12px;
+    isolation: isolate;
+    z-index: 0;
+}
+
+.glow::before {
+    content: "";
+    position: absolute;
+
+    width: 40%;
+    height: 40%;
+
+    background: #8250ff;
+    filter: blur(45px);
+    opacity: 0.5;
+
+    top: 30%;
+    left: 30%;
+    z-index: -1;
+}
