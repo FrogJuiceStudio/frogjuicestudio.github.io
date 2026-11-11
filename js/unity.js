@@ -160,6 +160,17 @@ function Start(){
     BuildGameContainer();
     InitCovers();
     AddPageClickListener();
+    
+    var unityFrame = document.getElementById("unityFrame");
+    unityFrame.addEventListener("click", OnUnityClick);
+    unityFrame.addEventListener("focus", OnUnityFocusEnter);
+    unityFrame.addEventListener("blur", OnUnityFocusExit);
+
+    var unityContainer = document.getElementById("unityContainer");
+    unityContainer.addEventListener("click", OnUnityClick);
+    unityContainer.addEventListener("focus", OnUnityFocusEnter);
+    unityContainer.addEventListener("blur", OnUnityFocusExit);
+
 }
 
 function SortGames(){
@@ -412,16 +423,16 @@ function OnStartGame(gameId)
     unityFrame.src = `./myGames/${gameId}/Build/index.html`;
     unityContainer.style.display = "block";
     unityBackdrop.style.display = "block";
-
-    // unityFrame.addEventListener("focus", OnUnityFocusEnter);
-    // unityFrame.addEventListener("blur", OnUnityFocusExit);
 }
 
+function OnUnityClick(){
+    console.log("%c >> CLICK UNITY", "color: steelblue;");
+}
 function OnUnityFocusEnter(){
-    console.log("%c >> FOCUS ENTER ["+gameId+"]", "color: steelblue;");
+    console.log("%c >> FOCUS ENTER", "color: steelblue;");
 }
 function OnUnityFocusExit(){
-    console.log("%c >> FOCUS EXIT ["+gameId+"]", "color: lightpink;");
+    console.log("%c >> FOCUS EXIT", "color: lightpink;");
 }
 
 function closeGame() 

@@ -158,12 +158,16 @@
 
             <!-- UNITY -->
             <div id="unityBackdrop" class="unity-backdrop"></div>
-            <div id="unityContainer" class="unity-container">
+            <div id="unityContainer" class="unity-container"
+                onclick="OnUnityClick()"
+                onfocus="OnUnityFocusEnter()"
+                onblur="OnUnityFocusExit()">
                 <button id="closeUnity" class="unity-close" type="button">✕</button>
                 <iframe
                     id="unityFrame"
                     class="unity-overlay"
                     src=""
+                    onclick="OnUnityClick()"
                     onfocus="OnUnityFocusEnter()"
                     onblur="OnUnityFocusExit()">
                 </iframe>
