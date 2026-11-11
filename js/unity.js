@@ -173,21 +173,16 @@ function Start(){
 
     var unityFrame = document.getElementById("unityFrame");
     unityFrame.addEventListener("load", () => {
-        unityFrame.contentWindow.addEventListener("click", OnUnityClick);
         unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
         unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
     });
 
-    var unityBackdrop = document.getElementById("unityBackdrop");
-    unityBackdrop.addEventListener("load", () => {
-        unityBackdrop.contentWindow.addEventListener("click", OnBackdrop);
-        unityBackdrop.contentWindow.addEventListener("focus", OnBackdrop);
-        unityBackdrop.contentWindow.addEventListener("blur", OnBackdrop);
-    });
-}
-
-function OnBackdrop(){
-    console.log("%c OnBackdrop", "color: lightgreen;");
+    // var unityBackdrop = document.getElementById("unityBackdrop");
+    // unityBackdrop.addEventListener("load", () => {
+    //     unityBackdrop.contentWindow.addEventListener("click", OnBackdrop);
+    //     unityBackdrop.contentWindow.addEventListener("focus", OnBackdrop);
+    //     unityBackdrop.contentWindow.addEventListener("blur", OnBackdrop);
+    // });
 }
 
 function SortGames(){
