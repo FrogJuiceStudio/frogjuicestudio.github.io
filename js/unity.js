@@ -412,8 +412,17 @@ function OnStartGame(gameId)
     unityFrame.src = `./myGames/${gameId}/Build/index.html`;
     unityContainer.style.display = "block";
     unityBackdrop.style.display = "block";
+
+    // unityFrame.addEventListener("focus", OnUnityFocusEnter);
+    // unityFrame.addEventListener("blur", OnUnityFocusExit);
 }
 
+function OnUnityFocusEnter(){
+    console.log("%c >> FOCUS ENTER ["+gameId+"]", "color: lightblue;");
+}
+function OnUnityFocusExit(){
+    console.log("%c >> FOCUS EXIT ["+gameId+"]", "color: orange;");
+}
 
 function closeGame() 
 {
