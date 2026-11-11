@@ -418,10 +418,10 @@ function OnStartGame(gameId)
 }
 
 function OnUnityFocusEnter(){
-    console.log("%c >> FOCUS ENTER ["+gameId+"]", "color: lightblue;");
+    console.log("%c >> FOCUS ENTER ["+gameId+"]", "color: steelblue;");
 }
 function OnUnityFocusExit(){
-    console.log("%c >> FOCUS EXIT ["+gameId+"]", "color: orange;");
+    console.log("%c >> FOCUS EXIT ["+gameId+"]", "color: lightpink;");
 }
 
 function closeGame() 
