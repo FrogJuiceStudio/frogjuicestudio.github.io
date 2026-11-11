@@ -150,136 +150,159 @@ const games = [
     },
 ];
 
-games.sort((a, b) => a.priority - b.priority);
 
-const gameContainer = document.getElementById("game-container");
-var gameContainerHTML = "";
+Start();
+let tooltipGameId = "";
 
-games.forEach(game => {
 
-    console.log("%cbuild gameContainer.innerHTML", "color: green;");
-    
-    gameContainerHTML += `
-        <div class="col-lg-3 col-md-6 col-12 mb-4">
-            <div class="team-block-wrap"
-                onclick="OnClickGame('${game.gameId}', event)"
-                onmouseenter="OnHoverGame('${game.gameId}', event)"
-                onmouseout="OnUnhoverGame('${game.gameId}', event)">
-               
-                <div class="team-block-info d-flex flex-column" style="pointer-events: none;">
+function Start(){
+    SortGames();
+    BuildGameContainer();
+    InitCovers();
+    AddPageClickListener();
+}
 
-                    <!-- NAME + BADGE -->
-                    <div class="d-flex mt-auto mb-2" style="z-index: 1">
-                        <h4 class="text-white mb-0">${game.gameId}</h4>
-                        <!-- <p class="badge ms-4"><em>${game.badge}</em></p> -->
+function SortGames(){
+    console.log("%c Sort Games", "color: lightyellow;");
+    games.sort((a, b) => a.priority - b.priority);
+}
+
+
+function BuildGameContainer(){
+    console.log("%c Build Game Container", "color: lightyellow;");
+    const gameContainer = document.getElementById("game-container");
+    var gameContainerHTML = "";
+    games.forEach(game => {
+        // console.log("%cbuild gameContainer.innerHTML", "color: green;");
+        gameContainerHTML += `
+            <div class="col-lg-3 col-md-6 col-12 mb-4">
+                <div class="team-block-wrap"
+                    onclick="OnClickGame('${game.gameId}')"
+                    onmouseenter="OnHoverGame('${game.gameId}')"
+                    onmouseout="OnUnhoverGame('${game.gameId}')">
+                
+                    <div class="team-block-info d-flex flex-column" style="pointer-events: none;">
+
+                        <!-- NAME + BADGE -->
+                        <div class="d-flex mt-auto mb-2" style="z-index: 1">
+                            <h4 class="text-white mb-0">${game.gameId}</h4>
+                            <!-- <p class="badge ms-4"><em>${game.badge}</em></p> -->
+                        </div>
+
+                        <!-- ICONS -->
+                        <div class="game-icons">
+                            ${game.canBePlayed ? `
+                                <i class="bi bi-play-fill game-icon" title="Playable in Browser"></i>
+                            ` : ""}
+                            ${game.steamPage ? `
+                                <i class="bi bi-steam game-icon" title="Available on Steam"></i>
+                            ` : ""}
+                            ${game.itchPage ? `
+                                <i class="bi bi-controller game-icon" title="Available on Itch.io"></i>
+                            ` : ""}
+                        </div>
+                        
                     </div>
-
-                    <!-- ICONS -->
-                    <div class="game-icons">
-                        ${game.canBePlayed ? `
-                            <i class="bi bi-play-fill game-icon" title="Playable in Browser"></i>
-                        ` : ""}
-                        ${game.steamPage ? `
-                            <i class="bi bi-steam game-icon" title="Available on Steam"></i>
-                        ` : ""}
-                        ${game.itchPage ? `
-                            <i class="bi bi-controller game-icon" title="Available on Itch.io"></i>
-                        ` : ""}
+                    
+                    <!-- COVER -->
+                    <div class="team-block-image-wrap">
+                        <video loop class="team-block-image img-fluid"
+                            id = "${game.gameId}"
+                            src="myGames/${game.gameId}/${game.gameId}.webm"
+                            style="filter: contrast(1.1); position: relative"
+                        ></video>
                     </div>
                     
                 </div>
-                
-                <!-- COVER -->
-                <div class="team-block-image-wrap">
-                    <video loop class="team-block-image img-fluid"
-                        id = "${game.gameId}"
-                        src="myGames/${game.gameId}/${game.gameId}.webm"
-                        style="filter: contrast(1.1); position: relative"
-                    ></video>
-                </div>
-                
-            </div>
 
-        </div>
-    `;
-});
+            </div>`;
+        });
 
-gameContainer.innerHTML += gameContainerHTML;
-
-games.forEach(game => {
-    InitCover(game.gameId);
-});
-
-function InitCover(gameId)
-{
-    console.log("%cInitCover ["+gameId+"]", "color: green;");
-    var gameElement = document.getElementById(gameId);
-    gameElement.currentTime = .75;
+        gameContainer.innerHTML += gameContainerHTML;
 }
 
-function OnHoverGame(gameId, event)
-{
-    if(tooltipGameId == gameId) return;
-    if(tooltipGameId != ""){
-        console.log("Tooltip still open ["+gameId+"]");
-        var unhoverId = tooltipGameId;
-        tooltipGameId = "";
-        OnUnhoverGame(unhoverId);
-    }
-    RemoveExistingTooltip();
-    console.log("%cHover ["+gameId+"]", "color: cyan;");
+
+function InitCovers(){
+    console.log("%c Init Covers", "color: lightyellow;");
+    games.forEach(game => {
+        // console.log("%cInitCover ["+game.gameId+"]", "color: green;");
+        var gameElement = document.getElementById(game.gameId);
+        gameElement.currentTime = .75;
+    });
+
+}
+
+
+function GetGameById(gameId){
+    var game = games.find(g => g.gameId === gameId);
+    return game;
+}
+
+function EqualsTooltipId(gameId){
+    return gameId == tooltipGameId;
+}
+
+function IsTooltipActive(){
+    return tooltipGameId != "";
+}
+
+
+function PlayAnim(gameId){
     var gameElement = document.getElementById(gameId);
+    if(!gameElement) return;
     gameElement.play();
     gameElement.style.zIndex = 1;
-    gameElement.style.transform = "scale(1.18)";
+    gameElement.style.transform = "scale(1.2)";
 }
 
-function RemoveExistingTooltip()
-{
-    // Remove existing tooltip
-    var existingTooltip = document.getElementById("gameTooltip");
-    if (existingTooltip) {
-        existingTooltip.remove();
-    }
-}
-
-function OnUnhoverGame(gameId)
-{
-    if(tooltipGameId == gameId){
-        var gameElement = document.getElementById(gameId);
-        gameElement.style.transform = "scale(1.18)";
-        return;
-    }
-    console.log("%cUnhover ["+gameId+"]", "color: orange;");
+function StopAnim(gameId){
     var gameElement = document.getElementById(gameId);
+    if(!gameElement) return;
     gameElement.pause();
-    gameElement.currentTime = .8;
+    gameElement.currentTime = .75;
     gameElement.style.zIndex = 0;
     gameElement.style.transform = "scale(1)";
 }
 
-var tooltipGameId = "";
-function OnClickGame(gameId, event)
-{
-    tooltipGameId = gameId;
-    console.log("%cCick ["+gameId+"]", "color: cyan;");
 
-    var game = games.find(g => g.gameId === gameId);
-
-    if (!game){
-        console.log("%cGame not found! [" + gameId +"]", "color: red;");
-        return;
+function OnHoverGame(gameId){
+    if(EqualsTooltipId(gameId)) return;
+    if(IsTooltipActive()){
+        console.log("Tooltip still open ["+tooltipGameId+"]");
+        StopAnim(tooltipGameId);
+        RemoveExistingTooltip();
     }
 
-    // Remove existing tooltip
+    console.log("%c > ENTER ["+gameId+"]", "color: lightblue;");
+    PlayAnim(gameId);
+}
+
+
+function OnUnhoverGame(gameId){
+    if(EqualsTooltipId(gameId)) return;
+    
+    console.log("%c > LEAVE ["+gameId+"]", "color: orange;");
+    StopAnim(gameId);
+}
+
+function OnClickGame(gameId){
+    console.log("%c > CLICK ["+gameId+"]", "color: lightgreen;");
+    var game = GetGameById(gameId);
+    RemoveExistingTooltip();
+    var optionsHTML = BuildTooltipOptionsHTML(game);
+    var tooltip = BuildTooltipElement(game, optionsHTML);    
+    ActivateTooltip(tooltip, game);
+}
+
+function RemoveExistingTooltip(){
     var existingTooltip = document.getElementById("gameTooltip");
     if (existingTooltip) {
         existingTooltip.remove();
+        tooltipGameId = "";
     }
+}
 
-    var tooltip = document.createElement("div");
-    tooltip.id = "gameTooltip";
-
+function BuildTooltipOptionsHTML(game){
     // Build options dynamically
     var options = "";
 
@@ -331,10 +354,13 @@ function OnClickGame(gameId, event)
             </a>
         `;
     }
-    
-    // Don't show an empty tooltip
-    // if (!options) return;
 
+    return options;
+}
+
+function BuildTooltipElement(game, options){
+    var tooltip = document.createElement("div");
+    tooltip.id = "gameTooltip";   
     tooltip.innerHTML = `
         <div class="game-tooltip-title">
             <i class="bi bi-joystick"></i>
@@ -342,7 +368,6 @@ function OnClickGame(gameId, event)
         </div>
         ${options}
     `;
-
 
     tooltip.style.position = "absolute";
     tooltip.style.left = event.pageX + "px";
@@ -353,18 +378,29 @@ function OnClickGame(gameId, event)
     tooltip.style.borderRadius = "6px";
     tooltip.style.zIndex = "9999";
 
-    document.body.appendChild(tooltip);
-
-    // Close when clicking outside
-    setTimeout(() => {
-        document.addEventListener("click", function closeTooltip(e) {
-            if (!tooltip.contains(e.target)) {
-                tooltip.remove();
-                document.removeEventListener("click", closeTooltip);
-            }
-        });
-    }, 0);
+    return tooltip;
 }
+
+function ActivateTooltip(tooltip, game){
+    document.body.appendChild(tooltip);
+    tooltipGameId = game.gameId;
+}
+
+
+
+function AddPageClickListener() {
+    document.addEventListener("click", (e) => {
+        if(!IsTooltipActive()) return;
+        if(e.target.closest(`#${CSS.escape(tooltipGameId)}`)) return;
+        OnPageWasClickedOutsideGames();
+    });
+}
+
+function OnPageWasClickedOutsideGames(){
+    StopAnim(tooltipGameId);
+    RemoveExistingTooltip();
+}
+
 
 function OnStartGame(gameId) 
 {
@@ -375,6 +411,7 @@ function OnStartGame(gameId)
     unityContainer.style.display = "block";
     unityBackdrop.style.display = "block";
 }
+
 
 function closeGame() 
 {

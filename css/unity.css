@@ -206,7 +206,6 @@
 }
 
 .game-icon:hover {
-    /* transform: scale(1.18); */
     background: rgba(255, 255, 255, 0.16);
     opacity: 1;
 
