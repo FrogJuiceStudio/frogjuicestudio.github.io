@@ -446,14 +446,14 @@ function OnUnityFocusEnter(){
     var unityFrame = document.getElementById("unityFrame");
     unityFrame.style.filter = "blur(0px)";
     var focusPrompt = document.getElementById("unityFocusPrompt");
-    focusPrompt.display = "none";
+    focusPrompt.style.display = "none";
 }
 function OnUnityFocusExit(){
     console.log("%c >> FOCUS EXIT", "color: lightpink;");
     var unityFrame = document.getElementById("unityFrame");
     unityFrame.style.filter = "blur(8px)";
     var focusPrompt = document.getElementById("unityFocusPrompt");
-    focusPrompt.display = "block";
+    focusPrompt.style.display = "block";
 }
 
 function closeGame() 
