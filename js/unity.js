@@ -176,6 +176,8 @@ function Start(){
         unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
         unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
         unityFrame.focus();
+        var unityCloseButton = document.getElementById("closeUnity");
+        unityCloseButton.style.display = "block";
     });
 
 
