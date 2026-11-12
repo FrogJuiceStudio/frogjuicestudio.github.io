@@ -175,10 +175,11 @@ function Start(){
     unityFrame.addEventListener("load", () => {
         unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
         unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
+        const canvas = document.getElementById("unity-canvas");
+        canvas.focus();
     });
 
-    const canvas = document.getElementById("unity-canvas");
-    canvas.focus();
+
 
     // var unityBackdrop = document.getElementById("unityBackdrop");
     // unityBackdrop.addEventListener("load", () => {
