@@ -430,7 +430,6 @@ function OnPageWasClickedOutsideGames(){
 function OnStartGame(gameId) 
 {
     var unityFrame = document.getElementById("unityFrame");
-    unityFrame.style.filter = "blur(10px)";
     var unityContainer = document.getElementById("unityContainer");
     var unityBackdrop = document.getElementById("unityBackdrop");
     unityFrame.src = `./myGames/${gameId}/Build/index.html`;
@@ -449,7 +448,7 @@ function OnUnityFocusEnter(){
 function OnUnityFocusExit(){
     console.log("%c >> FOCUS EXIT", "color: lightpink;");
     var unityFrame = document.getElementById("unityFrame");
-    unityFrame.style.filter = "blur(10px)";
+    unityFrame.style.filter = "blur(8px)";
 }
 
 function closeGame() 
