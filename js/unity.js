@@ -245,11 +245,15 @@ function AddUnityEventListener(){
     var unityCloseButton = document.getElementById("closeUnity");
 
     unityFrame.addEventListener("load", () => {
-        unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
-        unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
+        console.log("%cunityFrame load", "color: red;");
+
         unityFrame.focus();
         unityCloseButton.style.display = "block";
     });
+
+    
+        unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
+        unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
     
     unityCloseButton.addEventListener("click", OnCloseUnity);
 }
