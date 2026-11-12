@@ -243,17 +243,14 @@ function AddUnityEventListener(){
     console.log("%c Add Unity Event Listener", "color: lightyellow;");
     var unityFrame = document.getElementById("unityFrame");
     var unityCloseButton = document.getElementById("closeUnity");
-
+    
+    unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
+    unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
     unityFrame.addEventListener("load", () => {
         console.log("%cunityFrame load", "color: red;");
-
         unityFrame.focus();
         unityCloseButton.style.display = "block";
     });
-
-    
-        unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
-        unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
     
     unityCloseButton.addEventListener("click", OnCloseUnity);
 }
