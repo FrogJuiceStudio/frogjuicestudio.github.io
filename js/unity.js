@@ -155,6 +155,7 @@ let tooltipGameId = "";
 Start();
 
 function Start(){
+    console.log("%c 1", "color: lightred;");
     SortGames();
     BuildGameContainer();
     InitCovers();
