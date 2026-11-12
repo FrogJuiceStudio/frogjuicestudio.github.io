@@ -155,7 +155,7 @@ let tooltipGameId = "";
 Start();
 
 function Start(){
-    console.log("%c 2", "color: lightred;");
+    console.log("%c 3", "color: lightred;");
     SortGames();
     BuildGameContainer();
     InitCovers();
@@ -248,8 +248,10 @@ function AddUnityEventListener(){
     unityFrame.addEventListener("load", () => {
         console.log("%c unityFrame.src = " + unityFrame.src, "color: red;");
 
-        if(!unityFrame.src) return;
-        // if(unityFrame.src == "https://frogjuicestudio.github.io/index.html") return;
+        if(unityFrame.src == "https://frogjuicestudio.github.io/index.html"){
+            console.log("%c unityFrame load is empty, return", "color: red;");
+            return;
+        }
         console.log("%c unityFrame load", "color: red;");
         unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
         unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
