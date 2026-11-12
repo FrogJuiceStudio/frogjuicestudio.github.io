@@ -468,6 +468,12 @@ function closeGame()
     unityBackdrop.style.display = "none";
     // Stop/unload the Unity game
     unityFrame.src = "";
+
+    var unityCloseButton = document.getElementById("closeUnity");
+    unityCloseButton.style.display = "none";
+    var focusPrompt = document.getElementById("unityFocusPrompt");
+    focusPrompt.style.display = "none";
+    unityFrame.style.filter = "blur(8px)";
 }
 
 
