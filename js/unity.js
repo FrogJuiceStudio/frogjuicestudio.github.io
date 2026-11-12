@@ -245,6 +245,7 @@ function AddUnityEventListener(){
     var unityCloseButton = document.getElementById("closeUnity");
 
     unityFrame.addEventListener("load", () => {
+        console.log("%c unityFrame load", "color: red;");
         unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
         unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
         unityFrame.contentWindow.focus();
