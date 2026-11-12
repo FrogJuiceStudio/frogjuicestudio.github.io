@@ -150,27 +150,19 @@ const games = [
     },
 ];
 
-
-Start();
 let tooltipGameId = "";
 
+Start();
 
 function Start(){
     SortGames();
     BuildGameContainer();
     InitCovers();
     AddPageClickListener();
-    
-    // var unityFrame = document.getElementById("unityFrame");
-    // unityFrame.addEventListener("click", OnUnityClick);
-    // unityFrame.addEventListener("focus", OnUnityFocusEnter);
-    // unityFrame.addEventListener("blur", OnUnityFocusExit);
+    AddUnityEventListener();
+}
 
-    // var unityContainer = document.getElementById("unityContainer");
-    // unityContainer.addEventListener("click", OnUnityClick);
-    // unityContainer.addEventListener("focus", OnUnityFocusEnter);
-    // unityContainer.addEventListener("blur", OnUnityFocusExit);
-
+function AddUnityEventListener(){
     var unityFrame = document.getElementById("unityFrame");
     unityFrame.addEventListener("load", () => {
         unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
@@ -179,22 +171,12 @@ function Start(){
         var unityCloseButton = document.getElementById("closeUnity");
         unityCloseButton.style.display = "block";
     });
-
-
-
-    // var unityBackdrop = document.getElementById("unityBackdrop");
-    // unityBackdrop.addEventListener("load", () => {
-    //     unityBackdrop.contentWindow.addEventListener("click", OnBackdrop);
-    //     unityBackdrop.contentWindow.addEventListener("focus", OnBackdrop);
-    //     unityBackdrop.contentWindow.addEventListener("blur", OnBackdrop);
-    // });
 }
 
 function SortGames(){
     console.log("%c Sort Games", "color: lightyellow;");
     games.sort((a, b) => a.priority - b.priority);
 }
-
 
 function BuildGameContainer(){
     console.log("%c Build Game Container", "color: lightyellow;");
@@ -249,7 +231,6 @@ function BuildGameContainer(){
         gameContainer.innerHTML += gameContainerHTML;
 }
 
-
 function InitCovers(){
     console.log("%c Init Covers", "color: lightyellow;");
     games.forEach(game => {
@@ -259,7 +240,6 @@ function InitCovers(){
     });
 
 }
-
 
 function GetGameById(gameId){
     var game = games.find(g => g.gameId === gameId);
@@ -273,7 +253,6 @@ function EqualsTooltipId(gameId){
 function IsTooltipActive(){
     return tooltipGameId != "";
 }
-
 
 function PlayAnim(gameId){
     var gameElement = document.getElementById(gameId);
@@ -294,7 +273,6 @@ function StopAnim(gameId){
     gameElement.parentElement.style.zIndex = 0;
 }
 
-
 function OnHoverGame(gameId){
     if(EqualsTooltipId(gameId)) return;
     if(IsTooltipActive()){
@@ -306,7 +284,6 @@ function OnHoverGame(gameId){
     console.log("%c > ENTER ["+gameId+"]", "color: lightblue;");
     PlayAnim(gameId);
 }
-
 
 function OnUnhoverGame(gameId){
     if(EqualsTooltipId(gameId)) return;
@@ -417,7 +394,6 @@ function ActivateTooltip(tooltip, game){
 }
 
 
-
 function AddPageClickListener() {
     document.addEventListener("click", (e) => {
         if(!IsTooltipActive()) return;
@@ -431,14 +407,13 @@ function OnPageWasClickedOutsideGames(){
     RemoveExistingTooltip();
 }
 
-
 function OnStartGame(gameId) 
 {
     var unityFrame = document.getElementById("unityFrame");
     var unityContainer = document.getElementById("unityContainer");
     var unityBackdrop = document.getElementById("unityBackdrop");
     unityFrame.src = `./myGames/${gameId}/Build/index.html`;
-    unityFrame.style.filter = "blur(8px)";
+    BlurUnityFrame();
     unityContainer.style.display = "block";
     unityBackdrop.style.display = "block";
 }
@@ -458,25 +433,47 @@ function OnUnityFocusExit(){
     focusPrompt.style.display = "block";
 }
 
-function closeGame() 
+function CloseGame() 
 {
-    var unityFrame = document.getElementById("unityFrame");
     var unityContainer = document.getElementById("unityContainer");
     var unityBackdrop = document.getElementById("unityBackdrop");
-    // Hide everything
+    var unityFrame = document.getElementById("unityFrame");
     unityContainer.style.display = "none";
     unityBackdrop.style.display = "none";
-    // Stop/unload the Unity game
     unityFrame.src = "";
 
-    var unityCloseButton = document.getElementById("closeUnity");
-    unityCloseButton.style.display = "none";
-    var focusPrompt = document.getElementById("unityFocusPrompt");
-    focusPrompt.style.display = "none";
-    unityFrame.style.filter = "blur(8px)";
+    HideCloseButton();
+    HideFocusPrompt();
+    BlurUnityFrame();
 }
 
+function ShowCloseButton(){
+    var unityCloseButton = document.getElementById("closeUnity");
+    unityCloseButton.style.display = "block";
+}
+function HideCloseButton(){
+    var unityCloseButton = document.getElementById("closeUnity");
+    unityCloseButton.style.display = "none";
+}
+
+function ShowFocusPrompt(){
+    var focusPrompt = document.getElementById("unityFocusPrompt");
+    focusPrompt.style.display = "block";
+}
+function HideFocusPrompt(){
+    var focusPrompt = document.getElementById("unityFocusPrompt");
+    focusPrompt.style.display = "none";
+}
+
+function BlurUnityFrame(){
+    var unityFrame = document.getElementById("unityFrame");    
+    unityFrame.style.filter = "blur(8px)";
+}
+function SharpenUnityFrame(){
+    var unityFrame = document.getElementById("unityFrame");
+    unityFrame.style.filter = "blur(0px)";
+}
 
 // Close button
-document.getElementById("closeUnity").addEventListener("click", closeGame);
+document.getElementById("closeUnity").addEventListener("click", CloseGame);
 
