@@ -433,6 +433,7 @@ function OnStartGame(gameId)
     var unityContainer = document.getElementById("unityContainer");
     var unityBackdrop = document.getElementById("unityBackdrop");
     unityFrame.src = `./myGames/${gameId}/Build/index.html`;
+    unityFrame.style.filter = "blur(0px)";
     unityContainer.style.display = "block";
     unityBackdrop.style.display = "block";
 }
