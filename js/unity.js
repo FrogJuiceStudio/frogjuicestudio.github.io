@@ -176,8 +176,6 @@ function Start(){
         unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
         unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
         unityFrame.focus();
-        // const canvas = document.getElementById("unity-canvas");
-        // canvas.focus();
     });
 
 
@@ -447,11 +445,15 @@ function OnUnityFocusEnter(){
     console.log("%c >> FOCUS ENTER", "color: steelblue;");
     var unityFrame = document.getElementById("unityFrame");
     unityFrame.style.filter = "blur(0px)";
+    var focusPrompt = document.getElementById("unityFocusPrompt");
+    focusPrompt.display = "none";
 }
 function OnUnityFocusExit(){
     console.log("%c >> FOCUS EXIT", "color: lightpink;");
     var unityFrame = document.getElementById("unityFrame");
     unityFrame.style.filter = "blur(8px)";
+    var focusPrompt = document.getElementById("unityFocusPrompt");
+    focusPrompt.display = "block";
 }
 
 function closeGame() 
