@@ -162,17 +162,7 @@ function Start(){
     AddUnityEventListener();
 }
 
-function AddUnityEventListener(){
-    var unityFrame = document.getElementById("unityFrame");
-    unityFrame.addEventListener("load", () => {
-        unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
-        unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
-        unityFrame.focus();
-        var unityCloseButton = document.getElementById("closeUnity");
-        unityCloseButton.style.display = "block";
-    });
-}
-
+//#region BUILD
 function SortGames(){
     console.log("%c Sort Games", "color: lightyellow;");
     games.sort((a, b) => a.priority - b.priority);
@@ -234,13 +224,38 @@ function BuildGameContainer(){
 function InitCovers(){
     console.log("%c Init Covers", "color: lightyellow;");
     games.forEach(game => {
-        // console.log("%cInitCover ["+game.gameId+"]", "color: green;");
+        // console.log("%c  - Cover ["+game.gameId+"]", "color: lightyellow;");
         var gameElement = document.getElementById(game.gameId);
         gameElement.currentTime = .75;
     });
-
 }
 
+function AddPageClickListener() {
+    console.log("%c Add Click Listener", "color: lightyellow;");
+    document.addEventListener("click", (e) => {
+        if(!IsTooltipActive()) return;
+        if(e.target.closest(`#${CSS.escape(tooltipGameId)}`)) return;
+        OnPageWasClickedOutsideGames();
+    });
+}
+
+function AddUnityEventListener(){
+    console.log("%c Add Unity Event Listener", "color: lightyellow;");
+    var unityFrame = document.getElementById("unityFrame");
+    var unityCloseButton = document.getElementById("closeUnity");
+
+    unityFrame.addEventListener("load", () => {
+        unityFrame.contentWindow.addEventListener("focus", OnUnityFocusEnter);
+        unityFrame.contentWindow.addEventListener("blur", OnUnityFocusExit);
+        unityFrame.focus();
+        unityCloseButton.style.display = "block";
+    });
+    
+    unityCloseButton.addEventListener("click", OnCloseUnity);
+}
+//#endregion
+
+//#region UTIL
 function GetGameById(gameId){
     var game = games.find(g => g.gameId === gameId);
     return game;
@@ -253,6 +268,7 @@ function EqualsTooltipId(gameId){
 function IsTooltipActive(){
     return tooltipGameId != "";
 }
+//#endregion
 
 function PlayAnim(gameId){
     var gameElement = document.getElementById(gameId);
@@ -393,15 +409,6 @@ function ActivateTooltip(tooltip, game){
     tooltipGameId = game.gameId;
 }
 
-
-function AddPageClickListener() {
-    document.addEventListener("click", (e) => {
-        if(!IsTooltipActive()) return;
-        if(e.target.closest(`#${CSS.escape(tooltipGameId)}`)) return;
-        OnPageWasClickedOutsideGames();
-    });
-}
-
 function OnPageWasClickedOutsideGames(){
     StopAnim(tooltipGameId);
     RemoveExistingTooltip();
@@ -433,8 +440,7 @@ function OnUnityFocusExit(){
     focusPrompt.style.display = "block";
 }
 
-function CloseGame() 
-{
+function OnCloseUnity(){
     var unityContainer = document.getElementById("unityContainer");
     var unityBackdrop = document.getElementById("unityBackdrop");
     var unityFrame = document.getElementById("unityFrame");
@@ -474,6 +480,4 @@ function SharpenUnityFrame(){
     unityFrame.style.filter = "blur(0px)";
 }
 
-// Close button
-document.getElementById("closeUnity").addEventListener("click", CloseGame);
 
