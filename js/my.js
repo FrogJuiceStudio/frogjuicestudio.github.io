@@ -1,8 +1,6 @@
 
-function playCat() 
-{ 
+function OnClickEasteregg(){ 
   var cat = document.getElementById("cat");
-  
   if(cat.style.display === "none"){
     cat.style.display = "block";
     cat.play();
