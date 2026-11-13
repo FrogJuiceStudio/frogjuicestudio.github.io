@@ -164,9 +164,10 @@ let tooltipGameId = "";
 let isUnityActive = true;
 
 Start();
+const versionMsg = "aaaaaaaa";
 
 function Start(){
-    console.log("%c asw", "color: lightcoral;");
+    console.log("%c versionMsg >>> " + versionMsg, "color: lightcoral;");
     SortGames();
     BuildGameContainer();
     InitCovers();
