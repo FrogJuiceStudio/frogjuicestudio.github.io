@@ -163,8 +163,9 @@ const games = [
 let tooltipGameId = "";
 let isUnityActive = true;
 
-Start();
 const versionMsg = "aaaaaaaa";
+
+Start();
 
 function Start(){
     console.log("%c versionMsg >>> " + versionMsg, "color: lightcoral;");
