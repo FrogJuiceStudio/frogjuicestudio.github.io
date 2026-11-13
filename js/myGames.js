@@ -3,7 +3,7 @@ const games = [
     {
         gameId: "1A part of me",
         priority: 0,
-        displayName: "testgame",
+        displayName: "Test DisplayName",
         badge: "",
         description: "",
         canBePlayed: true,
@@ -177,6 +177,7 @@ function BuildGameContainer(){
     var gameContainerHTML = "";
     games.forEach(game => {
         // console.log("%cbuild gameContainer.innerHTML", "color: green;");
+        if(game.displayName == "") game.displayName = game.gameId;
         gameContainerHTML += `
             <div class="col-lg-3 col-md-6 col-12 mb-4">
                 <div class="team-block-wrap"
@@ -188,7 +189,7 @@ function BuildGameContainer(){
 
                         <!-- NAME + BADGE -->
                         <div class="d-flex mt-auto mb-2" style="z-index: 1">
-                            <h4 class="text-white mb-0">${game.gameId}</h4>
+                            <h4 class="text-white mb-0">${game.displayName}</h4>
                             <!-- <p class="badge ms-4"><em>${game.badge}</em></p> -->
                         </div>
 
