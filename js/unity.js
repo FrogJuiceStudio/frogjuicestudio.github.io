@@ -151,6 +151,7 @@ const games = [
 ];
 
 let tooltipGameId = "";
+let isUnityActive = true;
 
 Start();
 
@@ -249,6 +250,7 @@ function AddUnityEventListener(){
         console.log("%c unityFrame.src = " + unityFrame.src, "color: red;");
 
         if(unityFrame.src == "https://frogjuicestudio.github.io/index.html"){
+            console.log("%c isUnityActive active: " + isUnityActive, "color: red;");            
             console.log("%c unityFrame load is empty, return", "color: red;");
             return;
         }
@@ -428,6 +430,8 @@ function OnStartGame(gameId)
     var unityContainer = document.getElementById("unityContainer");
     var unityBackdrop = document.getElementById("unityBackdrop");
     unityFrame.src = `./myGames/${gameId}/Build/index.html`;
+    isUnityActive = true;
+
     BlurUnityFrame();
     unityContainer.style.display = "block";
     unityBackdrop.style.display = "block";
@@ -455,6 +459,7 @@ function OnCloseUnity(){
     unityContainer.style.display = "none";
     unityBackdrop.style.display = "none";
     unityFrame.src = "";
+    isUnityActive = false;
 
     HideCloseButton();
     HideFocusPrompt();
