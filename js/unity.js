@@ -9,6 +9,16 @@ const games = [
     //     itchPage: "https://frogjuice-studio.itch.io/",
     // },
     {
+        gameId: "1A part of me",
+        priority: 0,
+        displayName: "testgame",
+        badge: "",
+        description: "",
+        canBePlayed: true,
+        itchPage: "",
+        steamPage: ""
+    },
+    {
         gameId: "A part of me",
         priority: 99,
         displayName: "",
@@ -156,7 +166,7 @@ let isUnityActive = true;
 Start();
 
 function Start(){
-    console.log("%c 11", "color: lightcoral;");
+    console.log("%c 3", "color: lightcoral;");
     SortGames();
     BuildGameContainer();
     InitCovers();
