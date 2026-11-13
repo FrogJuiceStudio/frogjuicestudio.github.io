@@ -163,7 +163,7 @@ const games = [
 let tooltipGameId = "";
 let isUnityActive = true;
 
-const versionMsg = "aaaaaaaa";
+const versionMsg = "PLEASE";
 
 Start();
 
@@ -178,17 +178,20 @@ function Start(){
 }
 
 function AddUnityGameListener(){
+    console.log("%c Add Unity Game Listener", "color: lightyellow;");
+
     window.addEventListener("unityGameEvent", function(e) {
-    console.log("Unity event:", e.detail.event);
+        console.log(" >>>>>>>>>>>>>>> UNITY EVENT TRIGGERED!");
+        console.log(" >>>>>>>>>>>>>>> UNITY EVENT:", e.detail.event);
 
-    if (e.detail.event === "playerWon") {
-        alert("Congratulations! You won!");
-    }
+        if (e.detail.event === "playerWon") {
+            alert("Congratulations! You won!");
+        }
 
-    if (e.detail.event === "enemyDefeated") {
-        console.log("An enemy was defeated!");
-    }
-});
+        if (e.detail.event === "enemyDefeated") {
+            console.log("An enemy was defeated!");
+        }
+    });
 }
 
 //#region BUILD
