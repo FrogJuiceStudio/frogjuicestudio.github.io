@@ -162,6 +162,21 @@ function Start(){
     InitCovers();
     AddPageClickListener();
     AddUnityEventListener();
+    AddUnityGameListener();
+}
+
+function AddUnityGameListener(){
+    window.addEventListener("unityGameEvent", function(e) {
+    console.log("Unity event:", e.detail.event);
+
+    if (e.detail.event === "playerWon") {
+        alert("Congratulations! You won!");
+    }
+
+    if (e.detail.event === "enemyDefeated") {
+        console.log("An enemy was defeated!");
+    }
+});
 }
 
 //#region BUILD
@@ -250,7 +265,7 @@ function AddUnityEventListener(){
         console.log("%c unityFrame.src = " + unityFrame.src, "color: red;");
 
         if(unityFrame.src == "https://frogjuicestudio.github.io/index.html"){
-            console.log("%c isUnityActive active: " + isUnityActive, "color: red;");            
+            console.log("%c isUnityActive active: " + isUnityActive, "color: red;");
             console.log("%c unityFrame load is empty, return", "color: red;");
             return;
         }
