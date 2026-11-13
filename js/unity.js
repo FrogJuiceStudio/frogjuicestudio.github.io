@@ -163,7 +163,7 @@ const games = [
 let tooltipGameId = "";
 let isUnityActive = true;
 
-const versionMsg = "assaassasasa";
+const versionMsg = ":)";
 
 Start();
 
