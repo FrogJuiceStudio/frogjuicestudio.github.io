@@ -181,16 +181,7 @@ function AddUnityGameListener(){
     console.log("%c Add Unity Game Listener", "color: lightyellow;");
 
     window.addEventListener("unityGameEvent", function(e) {
-        console.log(" >>>>>>>>>>>>>>> UNITY EVENT TRIGGERED!");
-        console.log(" >>>>>>>>>>>>>>> UNITY EVENT:", e.detail.event);
-
-        if (e.detail.event === "playerWon") {
-            alert("Congratulations! You won!");
-        }
-
-        if (e.detail.event === "enemyDefeated") {
-            console.log("An enemy was defeated!");
-        }
+        console.log("EVENT RECEIVED:", e.detail.event);
     });
 }
 
