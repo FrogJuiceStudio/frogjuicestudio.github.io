@@ -166,7 +166,7 @@ let isUnityActive = true;
 Start();
 
 function Start(){
-    console.log("%c 3", "color: lightcoral;");
+    console.log("%c 3qw", "color: lightcoral;");
     SortGames();
     BuildGameContainer();
     InitCovers();
