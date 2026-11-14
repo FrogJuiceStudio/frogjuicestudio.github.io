@@ -1,17 +1,8 @@
-/*
-
-Tooplate 2137 Barista
-
-https://www.tooplate.com/view/2137-barista-cafe
-
-*/
-
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  /* --primary-color:                #23987f; */
   --primary-color:                #ff2f4f;
   --secondary-color:              #ff427ebe;
   --section-bg-color:             #030303;
@@ -49,40 +40,6 @@ https://www.tooplate.com/view/2137-barista-cafe
   --font-weight-bold:             700;
 }
 
-/* :root {
-  --white-color:                  #ffffff;
-  --primary-color:                #BC6C25;
-  --secondary-color:              #DDA15E;
-  --section-bg-color:             #b78752;
-  --custom-btn-bg-color:          #BC6C25;
-  --custom-btn-bg-hover-color:    #DDA15E;
-  --dark-color:                   #000000;
-  --p-color:                      #717275;
-  --border-color:                 #7fffd4;
-  --link-hover-color:             #E76F51;
-
-  --body-font-family:             'Plus Jakarta Sans', sans-serif;
-
-  --h1-font-size:                 68px;
-  --h2-font-size:                 46px;
-  --h3-font-size:                 32px;
-  --h4-font-size:                 28px;
-  --h5-font-size:                 24px;
-  --h6-font-size:                 22px;
-  --p-font-size:                  20px;
-  --btn-font-size:                16px;
-  --form-btn-font-size:           18px;
-  --menu-font-size:               16px;
-
-  --border-radius-large:          100px;
-  --border-radius-medium:         10px;
-  --border-radius-small:          5px;
-
-  --font-weight-thin:             200;
-  --font-weight-light:            300;
-  --font-weight-normal:           400;
-  --font-weight-bold:             700;
-} */
 
 body {
   background-color: var(--white-color);
@@ -93,7 +50,6 @@ body {
 /*---------------------------------------
   TYPOGRAPHY               
 -----------------------------------------*/
-
 h2,
 h3,
 h4,
@@ -369,12 +325,6 @@ strong {
   left: 0;
 }
 
-/* .sticky-wrapper.is-sticky .container {
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: var(--border-radius-medium);
-  padding: 15px 30px;
-} */
-
 .navbar {
   background: transparent;
   z-index: 999999;
@@ -390,18 +340,12 @@ strong {
   padding: 2px 30px;
 }
 
-
-
 .navbar-brand,
 .navbar-brand:hover {
   font-size: var(--h4-font-size);
   font-weight: var(--font-weight-bold);
   display: block;
   color: var(--white-color);
-}
-
-.navbar .navbar-brand-image {
-  /* filter: brightness(0) invert(1); */
 }
 
 .navbar-brand-image {
@@ -579,19 +523,6 @@ strong {
   text-align: center;
 }
 
-/* .hero-section::after {
-  background-color: rgba(0, 0, 0, 0.65);
-  border-radius: var(--border-radius-medium);
-  content: "";
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-55%, -50%) rotate(45deg);
-  width: 250px;
-  height: 350px;
-  pointer-events: none;
-} */
-
 @media screen and (min-width: 991px) {
   .hero-section {
     height: 100vh;
@@ -616,17 +547,11 @@ strong {
 }
 
 .trailer {
-  /* object-fit:none; */
-  /* width: 100%; */
   height: 100%;
   position: absolute !important;
 }
 
 .trailer-gradient {
-  /* background-image:
-    radial-gradient(circle, #0000 60%, var(--section-bg-color) 100%),
-    linear-gradient(to top, rgba(255, 255, 255, 0) 25%, var(--section-bg-color)) 100%,
-    ; */
   background-image:
     linear-gradient(to top, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
     linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, var(--section-bg-color)),
@@ -725,11 +650,8 @@ strong {
 }
 
 .new-game-wrap {
-  /* background-color: var(--section-bg-color); */
   border-radius: var(--border-radius-medium);
   position: relative;
-  /* overflow: hidden; */
-  /* max-height: 450px; */
   cursor: pointer;
 }
 
@@ -738,11 +660,6 @@ strong {
 }
 
 .new-game-info {
-  /* background-image:
-    linear-gradient(to top, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0) 85%, var(--section-bg-color)),
-    linear-gradient(to left, rgba(255, 255, 255, 0) 60%, var(--section-bg-color)),
-    linear-gradient(to right, rgba(255, 255, 255, 0) 60%, var(--section-bg-color)); */
   position: absolute;
   z-index: 2;
   top: 0;
@@ -756,13 +673,8 @@ strong {
   background-color: var(--section-bg-color);
   border-radius: var(--border-radius-medium);
   position: relative;
-  /* overflow: hidden; */
   max-height: 450px;
   cursor: pointer;
-}
-
-.team-block-wrap:hover .team-block-image {
-  /* transform: scale(1.2); */
 }
 
 .team-block-image-wrap {
@@ -784,7 +696,6 @@ strong {
     linear-gradient(to left, rgba(255, 255, 255, 0) 72%, var(--section-bg-color)),
     linear-gradient(to right, rgba(255, 255, 255, 0) 72%, var(--section-bg-color));
   position: absolute;
-  /* z-index: 2; */
   top: 0;
   right: 0;
   bottom: -28px;
@@ -1230,11 +1141,6 @@ strong {
     padding: 35px;
   }
 
-  /* .site-footer {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  } */
-
   .cat{
     display:none;
     height: 225px;
@@ -1325,7 +1231,6 @@ strong {
 
 @media screen and (max-width: 400px) {
   .navbar .container {
-    /* background: rgba(255, 255, 255, 0.04); */
     border-radius: var(--border-radius-medium);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -1352,11 +1257,9 @@ strong {
 }
 
 .onDisplay-name{
-  /* background: rgba(255, 255, 255, 0.04); */
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 7px;
-  /* line-height: normal; */
 }
