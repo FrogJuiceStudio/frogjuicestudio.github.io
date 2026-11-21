@@ -1,0 +1,30 @@
+{
+
+  "username": "Yanik",
+
+  "games":
+  [
+    {
+      "gameId": "1A part of me",      
+      "stats":
+      {
+        "playtime": 0,
+        "highscore": 0
+      },
+      "achievements": 
+      [
+        {
+          "id": "play",
+          "description": "Play the game",
+          "unlocked": false
+        },
+        {
+          "id": "complete",
+          "description": "Complete the game",
+          "unlocked": false
+        }
+      ]
+    }
+  ]
+
+}

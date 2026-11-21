@@ -212,8 +212,9 @@ function BuildGameContainer(){
                     <div class="team-block-image-wrap glow">
                         <video loop class="team-block-image img-fluid"
                             id = "${game.gameId}"
-                            src="myGames/${game.gameId}/${game.gameId}.webm"
-                            style="filter: contrast(1.1); position: relative"
+                            src = "myGames/${game.gameId}/${game.gameId}.webm"
+                            poster = "myGames/${game.gameId}/frame0000.png"
+                            style = "filter: contrast(1.1); position: relative"
                         ></video>
                     </div>
                     

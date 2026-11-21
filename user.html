@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Uploader</title>
+
+  <style>
+     
+  </style>
+</head>
+
+    <body>
+
+    <div id="json-uploader">
+
+        <div id="upload-panel">
+
+            <button id="close-upload">&times;</button>
+
+            <h3>Upload JSON</h3>
+
+            <input
+                type="file"
+                id="json-file"
+                accept=".json,application/json"
+            >
+
+            <button id="process-json">
+                Upload JSON
+            </button>
+
+            <p id="upload-status"></p>
+
+            <pre id="json-preview"></pre>
+
+        </div>
+
+        <button id="upload-toggle">
+            + JSON Upload
+        </button>
+
+    </div>
+    </body>
+</html>
+
+
+<!-- CSS -->
+<link href="css/user.css" rel="stylesheet">
+
+<!-- JAVASCRIPT -->
+<script src="js/user.js"></script>
+
